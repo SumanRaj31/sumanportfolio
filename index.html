@@ -4,269 +4,607 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suman Raj — Product & Growth Marketer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bebas+Neue&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 <style>
   :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #18181f;
-    --card: #1c1c25;
-    --border: rgba(255,255,255,0.07);
-    --border2: rgba(255,255,255,0.12);
-    --text: #f0f0f5;
-    --muted: #8888aa;
-    --accent: #7c6dfa;
-    --accent2: #a78bfa;
-    --accent3: #c4b5fd;
-    --teal: #2dd4bf;
-    --green: #34d399;
-    --amber: #fbbf24;
-    --pink: #f472b6;
-    --glow: rgba(124,109,250,0.15);
+    --bg: #fafaf8;
+    --bg2: #f2f0ea;
+    --card: #fff;
+    --border: rgba(0,0,0,0.10);
+    --border2: rgba(0,0,0,0.18);
+    --text: #111111;
+    --muted: #444444;
+    --accent: #111111;
+    --accent2: #333333;
+    --accent3: #555555;
+    --teal: #111111;
+    --green: #111111;
+    --amber: #111111;
+    --pink: #111111;
+    --h-bg: #fafaf8;
+    --h-text: #111111;
+    --h-muted: #444444;
+    --h-orange: #111111;
+    --h-border: rgba(0,0,0,0.12);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  body { font-family: 'Space Grotesk', system-ui, sans-serif; background: #fafaf8; color: #111; line-height: 1.6; overflow-x: hidden; }
 
   /* NAV */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 2rem;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 2.5rem;
+    background: rgba(250,250,248,0.96); backdrop-filter: blur(16px); border-bottom: 2px solid #111;
+    border-bottom: 1px solid var(--h-border);
   }
-  .nav-logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; color: var(--accent3); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.4rem; letter-spacing: 0.05em; color: #111; }
   .nav-links { display: flex; gap: 2rem; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a { color: var(--h-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--h-orange); }
 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    padding: 6rem 2rem 4rem;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 7rem 2rem 5rem; background: #fafaf8; position: relative; overflow: hidden;
+  }
+  .hero-blob1 { position: absolute; width: 420px; height: 420px; border-radius: 50%; background: rgba(245,200,66,0.18); top: -80px; right: -60px; pointer-events: none; }
+  .hero-blob2 { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: rgba(245,200,66,0.12); bottom: 40px; left: -60px; pointer-events: none; }
+  .squiggle-left { position: absolute; left: 6%; bottom: 30%; width: 64px; opacity: 0.55; animation: wobble 3s ease-in-out infinite; }
+  .squiggle-right { position: absolute; right: 8%; top: 28%; width: 48px; opacity: 0.4; animation: wobble 3.5s ease-in-out infinite reverse; }
+  @keyframes wobble { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+  .hero-dots { position: absolute; top: 80px; left: 40px; width: 120px; height: 120px; background-image: radial-gradient(circle, rgba(245,200,66,0.6) 1.5px, transparent 1.5px); background-size: 16px 16px; pointer-events: none; }
+  .hero-content { position: relative; text-align: center; max-width: 820px; }
+  .hero-greeting { display: inline-flex; align-items: center; gap: 0.5rem; background: #111; border: none; border-radius: 4px; padding: 0.4rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 1.75rem; box-shadow: 4px 4px 0 rgba(0,0,0,0.3); animation: fadeUp 0.5s ease both; letter-spacing: 0.05em; text-transform: uppercase; }
+  .hero-greeting .wave { font-size: 1rem; animation: wave 1.8s ease-in-out infinite; display: inline-block; }
+  @keyframes wave { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(18deg); } 60% { transform: rotate(-8deg); } }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 12vw, 10rem); font-weight: 400; line-height: 0.92; letter-spacing: 0.02em; color: #111; animation: fadeUp 0.5s 0.1s ease both; }
+  .hero h1 .name-highlight { color: #111; position: relative; display: inline-block; }
+  .hero h1 .name-highlight::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 5px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M2 8 Q15 2 30 8 Q45 14 60 8 Q75 2 90 8 Q105 14 118 8' fill='none' stroke='%23e8622a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center/auto 100%; opacity: 0.6; }
+  .hero h1 .role-line { display: block; font-size: clamp(3rem, 8vw, 7rem); color: #111; margin-top: 0.05em; font-family: 'Bebas Neue', sans-serif; }
+  .hero-available { display: inline-flex; align-items: center; gap: 0.45rem; background: #111; border: none; border-radius: 4px; padding: 0.35rem 0.9rem; font-size: 0.75rem; font-weight: 700; color: #fff; margin-top: 1.5rem; animation: fadeUp 0.5s 0.15s ease both; letter-spacing: 0.08em; text-transform: uppercase; }
+  .hero-available::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #fafaf8; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
+  .hero-sub { margin-top: 1.5rem; font-size: 1.05rem; color: #333; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; animation: fadeUp 0.5s 0.2s ease both; }
+  .hero-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; margin-top: 1.75rem; animation: fadeUp 0.5s 0.25s ease both; }
+  .tag { background: #fff; border: 2px solid #111; border-radius: 4px; padding: 0.35rem 0.9rem; font-size: 0.78rem; font-weight: 600; color: #111; box-shadow: 2px 2px 0 #F5C842; }
+  .hero-cta { display: flex; justify-content: center; gap: 0.875rem; flex-wrap: wrap; margin-top: 2.25rem; animation: fadeUp 0.5s 0.3s ease both; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.6rem; border-radius: 4px; font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: #fafaf8; color: #111; border: 2px solid #111; box-shadow: 4px 4px 0 #F5C842; }
+  .btn-primary:hover { background: #d4541f; transform: translateY(-2px); }
+  .btn-outline { background: #fff; color: #111; border: 2px solid #111; box-shadow: 4px 4px 0 #F5C842; }
+  .btn-outline:hover { background: #FFF3B0; color: #111; transform: translateY(-2px) translateX(-1px); }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+
+  /* METRICS TICKER */
+  .metrics-ticker-wrap {
+    background: #111;
+    border-top: none;
+    border-bottom: none;
+    overflow: hidden;
+    position: relative;
+  }
+  .metrics-ticker-wrap::before,
+  .metrics-ticker-wrap::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+  }
+  .metrics-ticker-wrap::before { left: 0; background: linear-gradient(to right, #111, transparent); }
+  .metrics-ticker-wrap::after  { right: 0; background: linear-gradient(to left,  #111, transparent); }
+  .metrics-ticker-track { display: flex; width: max-content; animation: tickerScroll 30s linear infinite; }
+  .metrics-ticker-track:hover { animation-play-state: paused; }
+  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .metric-ticker-item { display: flex; align-items: center; gap: 0.75rem; padding: 1.5rem 2.8rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+  .metric-ticker-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; font-weight: 400; color: #F5C842; line-height: 1; }
+  .metric-ticker-label { font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.6); line-height: 1.35; max-width: 100px; }
+  .metric-ticker-sep { font-size: 1.2rem; color: #F5C842; opacity: 0.5; margin: 0 0.25rem; }
+
+  /* SHARED SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1000px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #111; margin-bottom: 0.75rem; font-family: 'Space Grotesk', sans-serif; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 400; line-height: 1.0; letter-spacing: 0.02em; }
+  .section-sub { color: #333; margin-top: 0.75rem; max-width: 540px; font-size: 0.95rem; }
+
+  /* ========== JOURNEY SECTION ========== */
+  #experience {
+    padding: 0;
+    background: #fafaf8;
     position: relative;
     overflow: hidden;
   }
-  .hero-bg {
+
+  .journey-header {
+    text-align: center;
+    padding: 4rem 2rem 0;
+    position: relative;
+    z-index: 10;
+  }
+  .journey-header .section-label { color: #999; }
+  .journey-header .section-title { color: #111; }
+  .journey-header .section-sub { color: #333; margin: 0.75rem auto 0; }
+
+  /* Background dot grid */
+  .journey-bg-dots {
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(124,109,250,0.12) 0%, transparent 70%),
-                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(45,212,191,0.07) 0%, transparent 60%);
+    background-image: radial-gradient(circle, rgba(245,200,66,0.5) 1.2px, transparent 1.2px);
+    background-size: 28px 28px;
     pointer-events: none;
+    z-index: 0;
   }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(var(--border) 1px, transparent 1px),
-                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.4;
+
+  /* Decorative hand-scribble elements */
+  .j-deco {
+    position: absolute; pointer-events: none; z-index: 1;
+  }
+
+  /* Journey scroll area — height set by JS */
+  .journey-scroll-area {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* The pinned canvas — GSAP pins this, NOT CSS sticky */
+  .journey-sticky {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    will-change: transform;
+  }
+
+  /* SVG fills the pinned canvas */
+  #journey-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: visible;
+  }
+
+  #road-path {
+    fill: none;
+    stroke: #111;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 12 8;
+    opacity: 0.25;
+  }
+  #road-path-revealed {
+    fill: none;
+    stroke: #111;
+    stroke-width: 5;
+    stroke-linecap: round;
+    opacity: 1;
+  }
+
+  /* Cyclist */
+  #cyclist-wrap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 56px; height: 56px;
+    transform-origin: center center;
     pointer-events: none;
+    z-index: 20;
+    will-change: transform;
   }
-  .hero-content { position: relative; text-align: center; max-width: 800px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(124,109,250,0.12); border: 1px solid rgba(124,109,250,0.3);
-    border-radius: 100px; padding: 0.375rem 1rem;
-    font-size: 0.8rem; color: var(--accent3);
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease both;
+
+  /* Experience cards */
+  .j-card {
+    position: absolute;
+    background: #fff;
+    border-radius: 12px;
+    border: 2px solid #111;
+    box-shadow: 5px 5px 0 #F5C842;
+    padding: 1.1rem 1.25rem;
+    opacity: 0;
+    transform: scale(0.9) translateY(8px);
+    transition: opacity 0.4s cubic-bezier(0.34,1.4,0.64,1), transform 0.4s cubic-bezier(0.34,1.4,0.64,1);
+    pointer-events: none;
+    z-index: 15;
   }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-  .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    animation: fadeUp 0.6s 0.1s ease both;
+  .j-card.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
   }
-  .hero h1 span {
-    background: linear-gradient(135deg, var(--accent2), var(--teal));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  .j-card-co { display: inline-flex; align-items: center; background: #F5C842; border: 1.5px solid #111; border-radius: 100px; padding: 0.2rem 0.7rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111; margin-bottom: 0.6rem; }
+  .j-card-date { font-size: 0.7rem; color: #aaa; margin-bottom: 0.15rem; }
+  .j-card-role { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 0.45rem; line-height: 1.2; }
+  .j-card-desc { font-size: 0.79rem; color: #555; line-height: 1.58; margin-bottom: 0.7rem; }
+  .j-card-pills { display: flex; flex-wrap: wrap; gap: 0.28rem; }
+  .j-card-pill { font-size: 0.67rem; padding: 0.2rem 0.6rem; border-radius: 100px; background: #FFF3B0; color: #111; border: 1px solid rgba(0,0,0,0.15); font-weight: 600; }
+
+  /* SKILLS — diamond tool grid */
+  #skills { background: #fafaf8; padding: 5rem 2rem; }
+  #skills .section-title { color: #111; }
+  #skills .section-sub   { color: #333; }
+  #skills .section-label { color: #111; }
+
+  .tool-diamond-wrap {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
   }
-  .hero-sub {
-    margin-top: 1.25rem;
-    font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-left: auto; margin-right: auto;
-    animation: fadeUp 0.6s 0.2s ease both;
+
+  .tool-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
   }
-  .hero-tags {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
-    margin-top: 1.75rem;
-    animation: fadeUp 0.6s 0.3s ease both;
+
+  /* Each tool tile */
+  .tool-tile {
+    position: relative;
+    width: 90px; height: 90px;
+    background: #fff;
+    border-radius: 18px;
+    border: 2px solid #111;
+    box-shadow: 4px 4px 0 #F5C842;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+    flex-shrink: 0;
   }
-  .tag {
-    background: var(--card); border: 1px solid var(--border2);
-    border-radius: 100px; padding: 0.375rem 0.875rem;
-    font-size: 0.8rem; color: var(--muted);
+  .tool-tile:hover {
+    transform: translateY(-6px) scale(1.06);
+    border-color: #111;
+    box-shadow: 6px 6px 0 #F5C842;
+    z-index: 10;
   }
-  .hero-cta {
-    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  .tool-tile:hover .tool-tooltip { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+  .tool-logo {
+    width: 48px; height: 48px;
+    object-fit: contain;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  /* SVG tool icons */
+  .tool-logo svg { width: 44px; height: 44px; }
+
+  /* Tooltip */
+  .tool-tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%; transform: translateX(-50%) translateY(6px) scale(0.95);
+    width: 200px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.75rem; line-height: 1.5; text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+    white-space: normal;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+  .tool-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%; transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #1a1a1a;
+  }
+  .tool-tooltip strong {
+    display: block;
+    font-size: 0.78rem; font-weight: 700;
+    color: #F5C842;
+    margin-bottom: 0.25rem; background: #111; display: inline-block; padding: 0 4px; border-radius: 2px;
+  }
+
+  /* Tooltip that opens downward for top rows */
+  .tool-tile.tip-down .tool-tooltip {
+    bottom: auto;
+    top: calc(100% + 12px);
+    transform: translateX(-50%) translateY(-6px) scale(0.95);
+  }
+  .tool-tile.tip-down:hover .tool-tooltip { transform: translateX(-50%) translateY(0) scale(1); }
+  .tool-tile.tip-down .tool-tooltip::after {
+    top: auto; bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: #1a1a1a;
+  }
+
+  /* WHAT I DO — Expandable card slider */
+  #work { background: #fafaf8; padding: 5rem 0; }
+  #work .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  .exp-slider-wrap {
     margin-top: 2.5rem;
-    animation: fadeUp 0.6s 0.4s ease both;
-  }
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.75rem 1.5rem; border-radius: 8px;
-    font-size: 0.9rem; font-weight: 500; text-decoration: none;
-    cursor: pointer; border: none; transition: all 0.2s;
-  }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-primary:hover { background: #6b5cf0; transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
-  .btn-outline:hover { background: var(--card); border-color: var(--accent); color: var(--accent3); }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-
-  /* METRICS STRIP */
-  .metrics-strip {
-    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    background: var(--bg2);
-    padding: 2.5rem 2rem;
-  }
-  .metrics-grid {
-    max-width: 1000px; margin: 0 auto;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-    gap: 1.5rem; text-align: center;
-  }
-  .metric-item {}
-  .metric-num {
-    font-size: 2rem; font-weight: 700;
-    background: linear-gradient(135deg, var(--accent2), var(--teal));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  }
-  .metric-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.4; }
-
-  /* SECTIONS */
-  section { padding: 5rem 2rem; }
-  .section-inner { max-width: 1000px; margin: 0 auto; }
-  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
-  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
-  .section-sub { color: var(--muted); margin-top: 0.75rem; max-width: 540px; font-size: 0.95rem; }
-
-  /* EXPERIENCE */
-  .exp-grid { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; position: relative; }
-  .exp-grid::before {
-    content: ''; position: absolute; left: 11px; top: 0; bottom: 0;
-    width: 1px; background: linear-gradient(to bottom, var(--accent), var(--teal) 60%, transparent);
-  }
-  .exp-item { display: flex; gap: 2rem; padding-bottom: 3rem; position: relative; }
-  .exp-dot {
-    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
-    background: var(--accent); border: 3px solid var(--bg);
-    box-shadow: 0 0 0 4px rgba(124,109,250,0.2);
-    margin-top: 2px;
-  }
-  .exp-dot.teal { background: var(--teal); box-shadow: 0 0 0 4px rgba(45,212,191,0.15); }
-  .exp-body { flex: 1; }
-  .exp-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
-  .exp-co {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--accent3); background: rgba(124,109,250,0.1); border: 1px solid rgba(124,109,250,0.2);
-    padding: 0.2rem 0.6rem; border-radius: 100px;
-  }
-  .exp-co.teal-co { color: var(--teal); background: rgba(45,212,191,0.08); border-color: rgba(45,212,191,0.2); }
-  .exp-date { font-size: 0.8rem; color: var(--muted); }
-  .exp-role { font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; }
-  .exp-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
-  .exp-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .pill {
-    font-size: 0.75rem; padding: 0.25rem 0.7rem;
-    border-radius: 100px; border: 1px solid var(--border2);
-    color: var(--muted); background: var(--card);
+    overflow: hidden;
+    position: relative;
   }
 
-  /* SKILLS */
-  .skills-section { background: var(--bg2); }
-  .skills-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
-  .skill-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 1.25rem 1.25rem 1.25rem;
-    transition: border-color 0.2s, transform 0.2s;
+  .exp-slider {
+    display: flex;
+    gap: 12px;
+    height: 420px;
+    cursor: pointer;
+    user-select: none;
   }
-  .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .skill-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
-  .skill-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-  .skill-tag { font-size: 0.7rem; padding: 0.2rem 0.55rem; border-radius: 100px; background: rgba(124,109,250,0.1); color: var(--accent3); }
-  .skill-tag.teal { background: rgba(45,212,191,0.1); color: var(--teal); }
-  .skill-tag.amber { background: rgba(251,191,36,0.1); color: var(--amber); }
-  .skill-tag.pink { background: rgba(244,114,182,0.1); color: var(--pink); }
-  .skill-tag.green { background: rgba(52,211,153,0.1); color: var(--green); }
 
-  /* WHAT I DO */
-  .work-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; }
-  .work-card { background: var(--bg2); padding: 1.75rem; transition: background 0.2s; }
-  .work-card:hover { background: var(--card); }
-  .work-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
-  .work-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .work-text { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+  .exp-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* collapsed width */
+    width: 72px;
+    transition: width 0.55s cubic-bezier(0.4,0,0.2,1);
+    border: 2px solid #111;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .exp-card.active {
+    width: 480px;
+    border-color: #111;
+    box-shadow: 6px 6px 0 #F5C842;
+  }
+
+  /* Collapsed tab — vertical number + title */
+  .exp-card-tab {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.5rem 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+  .exp-card.active .exp-card-tab { opacity: 0; pointer-events: none; }
+
+  .exp-tab-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem; font-weight: 400;
+    color: #111;
+    letter-spacing: 0.08em;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    opacity: 0.7;
+  }
+  .exp-tab-title {
+    font-size: 0.7rem; font-weight: 600;
+    color: #666;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 140px;
+  }
+
+  /* Expanded content */
+  .exp-card-body {
+    position: absolute;
+    top: 0; left: 72px; right: 0; bottom: 0;
+    padding: 2rem 1.75rem;
+    opacity: 0;
+    transform: translateX(12px);
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+    pointer-events: none;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .exp-card-body::-webkit-scrollbar { display: none; }
+  .exp-card.active .exp-card-body {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Accent stripe on left */
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: #111;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    z-index: 3;
+  }
+  .exp-card.active::before { opacity: 1; }
+
+  .exp-card-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem; font-weight: 400;
+    color: #111; letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+  .exp-card-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: #fff3ee; border: 1.5px solid rgba(232,98,42,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+  .exp-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; font-weight: 400;
+    color: #111; line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+  .exp-card-desc {
+    font-size: 0.83rem; color: var(--h-muted);
+    line-height: 1.7; margin-bottom: 1rem;
+  }
+  .exp-card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .exp-card-tag {
+    font-size: 0.68rem; padding: 0.22rem 0.6rem;
+    border-radius: 100px;
+    background: #FFF3B0; color: #111;
+    border: 1px solid #111; font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Nav arrows */
+  .slider-nav {
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 0.5rem; margin-top: 1.25rem;
+  }
+  .slider-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 2px solid #111;
+    background: #fff; color: #111; font-weight: 700; box-shadow: 3px 3px 0 #F5C842;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s; font-size: 1rem;
+  }
+  .slider-btn:hover { background: #FFF3B0; color: #111; border-color: #111; }
+  .slider-btn:disabled { opacity: 0.3; cursor: default; }
+  .slider-dots { display: flex; gap: 6px; align-items: center; margin-right: auto; }
+  .slider-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(0,0,0,0.1); transition: all 0.3s;
+    cursor: pointer;
+  }
+  .slider-dot.active { background: #F5C842; width: 20px; border-radius: 3px; }
 
   /* AWARDS */
-  .award-card {
-    background: linear-gradient(135deg, rgba(124,109,250,0.08), rgba(45,212,191,0.05));
-    border: 1px solid rgba(124,109,250,0.25);
-    border-radius: 12px; padding: 1.5rem 2rem;
-    display: flex; align-items: flex-start; gap: 1.25rem;
-    margin-top: 2.5rem;
-  }
-  .award-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+  .award-card { background: #fff; border: 2.5px solid #111; box-shadow: 5px 5px 0 #F5C842; border-radius: 12px; padding: 1.5rem 2rem; display: flex; align-items: flex-start; gap: 1.25rem; margin-top: 2.5rem; }
+  .award-icon { font-size: 2rem; flex-shrink: 0; }
   .award-text .award-title { font-size: 1rem; font-weight: 600; }
   .award-text .award-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
 
   /* CERTS */
   .certs-grid { margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-  .cert-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.25rem 1.25rem;
-    display: flex; align-items: center; gap: 1rem;
-    transition: border-color 0.2s;
-  }
-  .cert-card:hover { border-color: var(--border2); }
+  .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s; }
+  .cert-card:hover { border-color: #111; box-shadow: 6px 6px 0 #F5C842; }
   .cert-badge { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; }
-  .cert-badge.pma { background: rgba(124,109,250,0.15); }
-  .cert-badge.hs { background: rgba(251,191,36,0.12); }
+  .cert-badge.pma { background: #fafaf8; }
+  .cert-badge.hs { background: #F5C842; }
   .cert-name { font-size: 0.88rem; font-weight: 500; line-height: 1.3; }
   .cert-by { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
 
   /* CONTACT */
-  .contact-section { background: var(--bg2); }
-  .contact-box {
-    max-width: 560px; margin: 2.5rem auto 0;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 2.5rem;
-    text-align: center;
-  }
+  .contact-section { background: #fafaf8; }
+  .contact-box { max-width: 560px; margin: 2.5rem auto 0; background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; text-align: center; }
   .contact-name { font-size: 1.5rem; font-weight: 700; }
   .contact-role { font-size: 0.9rem; color: var(--muted); margin-top: 0.25rem; }
   .contact-links { margin-top: 1.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.5rem;
-    padding: 0.6rem 1.1rem; border-radius: 8px;
-    border: 1px solid var(--border2); color: var(--muted);
-    text-decoration: none; font-size: 0.85rem;
-    transition: all 0.2s;
-  }
-  .contact-link:hover { color: var(--text); border-color: var(--accent); background: rgba(124,109,250,0.08); }
+  .contact-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.1rem; border-radius: 8px; border: 2px solid #111; color: #111; font-weight: 600; text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+  .contact-link:hover { color: #F5C842; border-color: #111; background: #111; box-shadow: 3px 3px 0 #F5C842; }
   .contact-link svg { width: 16px; height: 16px; }
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; font-size: 0.8rem; color: var(--muted); }
+  footer { border-top: 3px solid #111; padding: 1.5rem 2rem; text-align: center; font-size: 0.8rem; color: #333; background: #fafaf8; }
+
+  /* pill in hero */
+  .pill { font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 100px; border: 2px solid #111; color: #111; font-weight: 600; background: var(--card); }
+
+  /* ── THEME REFINEMENTS: white bg, yellow accent only ── */
+  body { background: #fafaf8 !important; }
+  .hero { background: #fafaf8 !important; }
+  #experience { background: #fafaf8 !important; }
+  #work { background: #fafaf8 !important; }
+  #skills { background: #fafaf8 !important; }
+  .contact-section { background: #fafaf8 !important; }
+  footer { background: #fafaf8 !important; }
+  section[style*="background:#F5C842"] { background: #fafaf8 !important; }
+  section[style*="background:var(--bg2)"] { background: #fafaf8 !important; }
+  .metrics-strip { background: #111 !important; }
+
+  /* Yellow as accent — shadows, badges, highlights */
+  .btn-primary { background: #F5C842 !important; color: #111 !important; border: 2px solid #111 !important; box-shadow: 4px 4px 0 #111 !important; }
+  .btn-primary:hover { background: #e6b800 !important; box-shadow: 6px 6px 0 #111 !important; transform: translateY(-2px) translateX(-1px) !important; }
+  .btn-outline { box-shadow: 4px 4px 0 #F5C842 !important; }
+  .btn-outline:hover { background: #111 !important; color: #F5C842 !important; }
+
+  .tag { background: #fff !important; border: 2px solid #111 !important; box-shadow: 2px 2px 0 #F5C842 !important; color: #111 !important; }
+
+  .hero-greeting { background: #111 !important; color: #F5C842 !important; box-shadow: 3px 3px 0 #F5C842 !important; }
+  .hero-available { background: #F5C842 !important; color: #111 !important; border: 2px solid #111 !important; }
+  .hero-available::before { background: #111 !important; }
+
+  .j-card { background: #fff !important; border: 2px solid #111 !important; box-shadow: 4px 4px 0 #F5C842 !important; }
+  .j-card-co { background: #F5C842 !important; color: #111 !important; border: 1px solid #111 !important; }
+  .j-card-pill { background: #FFF3B0 !important; color: #111 !important; border: 1px solid rgba(0,0,0,0.15) !important; }
+
+  .tool-tile { background: #fff !important; border: 2px solid #111 !important; box-shadow: 4px 4px 0 #F5C842 !important; }
+  .tool-tile:hover { box-shadow: 6px 6px 0 #111 !important; transform: translateY(-6px) scale(1.06) !important; }
+
+  .exp-card { background: #fff !important; border: 2px solid #111 !important; }
+  .exp-card.active { box-shadow: 6px 6px 0 #F5C842 !important; }
+  .exp-card::before { background: #F5C842 !important; }
+  .exp-card-title { color: #111 !important; font-family: 'Bebas Neue', sans-serif !important; font-size: 1.8rem !important; }
+  .exp-card-tag { background: #FFF3B0 !important; color: #111 !important; border: 1px solid rgba(0,0,0,0.15) !important; }
+  .exp-card-icon { background: #FFF3B0 !important; border: 1.5px solid #111 !important; }
+
+  .slider-btn { background: #fff !important; border: 2px solid #111 !important; color: #111 !important; box-shadow: 3px 3px 0 #F5C842 !important; }
+  .slider-btn:hover { background: #111 !important; color: #F5C842 !important; box-shadow: none !important; }
+  .slider-dot { background: rgba(0,0,0,0.1) !important; }
+  .slider-dot.active { background: #F5C842 !important; border: 1.5px solid #111 !important; }
+
+  .award-card { background: #fff !important; border: 2.5px solid #111 !important; box-shadow: 5px 5px 0 #F5C842 !important; }
+  .cert-card { background: #fff !important; border: 2px solid #111 !important; box-shadow: 4px 4px 0 #F5C842 !important; }
+  .cert-badge.pma { background: #F5C842 !important; }
+  .cert-badge.hs  { background: #F5C842 !important; }
+
+  .contact-box { background: #fff !important; border: 2.5px solid #111 !important; box-shadow: 6px 6px 0 #F5C842 !important; }
+  .contact-link:hover { background: #111 !important; color: #F5C842 !important; }
+
+  .skill-tag  { background: #FFF3B0 !important; color: #111 !important; border: 1px solid rgba(0,0,0,0.12) !important; }
+  .skill-card { background: #fff !important; border: 2px solid #111 !important; box-shadow: 3px 3px 0 #F5C842 !important; }
+
+  .metric-ticker-num { color: #F5C842 !important; }
+
+  /* dot grid dots yellow tint */
+  .journey-bg-dots {
+    background-image: radial-gradient(circle, rgba(245,200,66,0.5) 1.2px, transparent 1.2px) !important;
+  }
+  .hero-dots {
+    background-image: radial-gradient(circle, rgba(245,200,66,0.7) 1.5px, transparent 1.5px) !important;
+  }
+
+  /* Name highlight underline stays yellow */
+  .hero h1 .name-highlight::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M2 8 Q15 2 30 8 Q45 14 60 8 Q75 2 90 8 Q105 14 118 8' fill='none' stroke='%23F5C842' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+    opacity: 1 !important;
+    height: 7px !important;
+  }
+
+  /* Scribble SVGs → black */
+  .squiggle-left path, .squiggle-right path { stroke: #111 !important; }
+
+  /* Nav */
+  nav { background: rgba(250,250,248,0.97) !important; border-bottom: 2.5px solid #111 !important; }
+  nav .nav-logo { color: #111 !important; }
+  nav .nav-links a { color: #555 !important; }
+  nav .nav-links a:hover { color: #111 !important; text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Section labels */
+  .section-label { color: #999 !important; }
+  .journey-header .section-label { color: #999 !important; }
+  #skills .section-label, #work .section-label, #skills .section-label { color: #999 !important; }
+
+  /* Section subs */
+  .section-sub { color: #555 !important; }
+
+  /* Journey path */
+  #road-path { stroke: #111 !important; opacity: 0.2 !important; }
+  #road-path-revealed { stroke: #111 !important; }
+
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Suman Raj</div>
   <div class="nav-links">
-    <a href="#experience">Experience</a>
+    <a href="#experience">Journey</a>
     <a href="#skills">Skills</a>
     <a href="#work">What I do</a>
     <a href="#contact">Contact</a>
@@ -275,288 +613,713 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-dots"></div>
+  <svg class="squiggle-left" viewBox="0 0 60 80" fill="none">
+    <path d="M30 4 Q44 16 30 28 Q16 40 30 52 Q44 64 30 76" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+  </svg>
+  <svg class="squiggle-right" viewBox="0 0 50 50" fill="none">
+    <path d="M6 44 L44 6 M20 44 L44 20" stroke="#111111" stroke-width="3.5" stroke-linecap="round"/>
+  </svg>
   <div class="hero-content">
-    <div class="hero-badge">Open to new opportunities · Bengaluru, India</div>
-    <h1>Product &amp; Growth<br><span>Marketer</span></h1>
+    <div class="hero-greeting"><span class="wave">👋</span> Hey there, I'm Suman</div>
+    <h1>I'm a <span class="name-highlight">Product</span><span class="role-line">&amp; Growth Marketer</span></h1>
+    <div class="hero-available">Open to new opportunities · Bengaluru, India</div>
     <p class="hero-sub">3+ years building B2B SaaS pipelines from scratch — paid acquisition, lifecycle automation, competitive positioning, and SEO systems that actually move numbers.</p>
     <div class="hero-tags">
-      <span class="tag">GTM Strategy</span>
-      <span class="tag">Paid Acquisition</span>
-      <span class="tag">Lifecycle Email</span>
-      <span class="tag">SEO</span>
-      <span class="tag">Competitive Intel</span>
-      <span class="tag">Sales Enablement</span>
-      <span class="tag">PostHog</span>
-      <span class="tag">Meta &amp; Google Ads</span>
+      <span class="tag">GTM Strategy</span><span class="tag">Paid Acquisition</span><span class="tag">Lifecycle Email</span>
+      <span class="tag">SEO</span><span class="tag">Competitive Intel</span><span class="tag">Sales Enablement</span>
+      <span class="tag">PostHog</span><span class="tag">Meta &amp; Google Ads</span>
     </div>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="mailto:sumanin031@gmail.com">Get in touch</a>
+      <a class="btn btn-primary" href="mailto:sumanin031@gmail.com">Get in touch ✉️</a>
       <a class="btn btn-outline" href="https://linkedin.com/in/suman-raj-" target="_blank">LinkedIn ↗</a>
     </div>
   </div>
 </section>
 
-<!-- METRICS -->
-<div class="metrics-strip">
-  <div class="metrics-grid">
-    <div class="metric-item">
-      <div class="metric-num">77%</div>
-      <div class="metric-label">Signup growth in 3 months</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-num">7×</div>
-      <div class="metric-label">Month-over-month activation growth</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-num">+587%</div>
-      <div class="metric-label">Team invitation growth (expansion signal)</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-num">$800/d</div>
-      <div class="metric-label">Paid media managed (Meta + Google)</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-num">247</div>
-      <div class="metric-label">At-risk users recovered via lifecycle fix</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-num">151</div>
-      <div class="metric-label">SEO topics across 9 clusters &amp; 5 verticals</div>
-    </div>
+<!-- METRICS TICKER -->
+<div class="metrics-ticker-wrap">
+  <div class="metrics-ticker-track" id="metricsTicker">
+    <!-- set A -->
+    <div class="metric-ticker-item"><span class="metric-ticker-num">77%</span><span class="metric-ticker-label">Signup growth in 3 months</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">7×</span><span class="metric-ticker-label">MoM activation growth</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">+587%</span><span class="metric-ticker-label">Team invitation growth</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">$800/d</span><span class="metric-ticker-label">Paid media managed</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">247</span><span class="metric-ticker-label">At-risk users recovered</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">151</span><span class="metric-ticker-label">SEO topics, 9 clusters</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">132</span><span class="metric-ticker-label">Blog posts rewritten</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">711</span><span class="metric-ticker-label">Backlink records built</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">3+</span><span class="metric-ticker-label">Years in B2B SaaS</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <!-- set B — exact duplicate for seamless loop -->
+    <div class="metric-ticker-item"><span class="metric-ticker-num">77%</span><span class="metric-ticker-label">Signup growth in 3 months</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">7×</span><span class="metric-ticker-label">MoM activation growth</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">+587%</span><span class="metric-ticker-label">Team invitation growth</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">$800/d</span><span class="metric-ticker-label">Paid media managed</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">247</span><span class="metric-ticker-label">At-risk users recovered</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">151</span><span class="metric-ticker-label">SEO topics, 9 clusters</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">132</span><span class="metric-ticker-label">Blog posts rewritten</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">711</span><span class="metric-ticker-label">Backlink records built</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-num">3+</span><span class="metric-ticker-label">Years in B2B SaaS</span></div>
+    <div class="metric-ticker-item"><span class="metric-ticker-sep">✦</span></div>
   </div>
 </div>
 
-<!-- EXPERIENCE -->
+<!-- ========== JOURNEY / EXPERIENCE ========== -->
 <section id="experience">
-  <div class="section-inner">
+  <div class="journey-bg-dots"></div>
+
+  <!-- Decorative scribbles -->
+  <svg class="j-deco" style="top:8%;left:3%;width:80px;opacity:0.35;" viewBox="0 0 80 80" fill="none">
+    <path d="M10 40 Q20 10 40 40 Q60 70 70 40" stroke="#e8622a" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <svg class="j-deco" style="top:20%;right:4%;width:60px;opacity:0.3;transform:rotate(30deg);" viewBox="0 0 60 60" fill="none">
+    <circle cx="30" cy="30" r="22" stroke="#e8622a" stroke-width="2.5" stroke-dasharray="6 4"/>
+  </svg>
+  <svg class="j-deco" style="bottom:15%;left:5%;width:50px;opacity:0.25;" viewBox="0 0 50 50" fill="none">
+    <path d="M5 45 L45 5 M20 45 L45 20 M5 30 L30 5" stroke="#e8622a" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <svg class="j-deco" style="bottom:30%;right:6%;width:70px;opacity:0.3;transform:rotate(-15deg);" viewBox="0 0 70 40" fill="none">
+    <path d="M5 20 Q20 5 35 20 Q50 35 65 20" stroke="#e8622a" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M55 15 L65 20 L58 28" fill="none" stroke="#e8622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <div class="journey-header">
     <div class="section-label">Career</div>
-    <h2 class="section-title">Experience</h2>
-    <p class="section-sub">Built marketing from the ground up at two SaaS companies, progressively owning more of the stack.</p>
+    <h2 class="section-title" style="color:var(--h-text);">My Journey</h2>
+    <p class="section-sub" style="color:var(--h-muted);margin:0.75rem auto 0;">Scroll to ride through the story</p>
+  </div>
 
-    <div class="exp-grid">
+  <!-- Cyclist rides through this pinned viewport — GSAP pins it -->
+  <div class="journey-sticky" id="journeySticky">
 
-      <!-- PM role -->
-      <div class="exp-item">
-        <div class="exp-dot"></div>
-        <div class="exp-body">
-          <div class="exp-meta">
-            <span class="exp-co">Swivl</span>
-            <span class="exp-date">Jul 2025 – Present</span>
-          </div>
-          <div class="exp-role">Product Marketer</div>
-          <div class="exp-desc">
-            Owned end-to-end GTM strategy for Swivl's AI-native FSM platform across 5 trade verticals (HVAC, plumbing, electrical, landscaping, roofing). Built ICP frameworks from PostHog behavioral cohorts, developed sales pitch assets, created competitive battle cards, and managed a cross-functional team of 5 (PPC, SEO, dev, 2 designers). Planned and executed full feature launch cycles — solution pages, social content, creative campaigns. Managed $800/day paid media across Meta and Google.
-          </div>
-          <div class="exp-pills">
-            <span class="pill">GTM Strategy</span>
-            <span class="pill">Sales Enablement</span>
-            <span class="pill">Competitive Intel</span>
-            <span class="pill">Feature Launches</span>
-            <span class="pill">Meta + Google Ads</span>
-            <span class="pill">Team Management</span>
-            <span class="pill">ICP Development</span>
-            <span class="pill">PostHog</span>
-            <span class="pill">Website Strategy</span>
-          </div>
-        </div>
+      <!-- SVG layer: path + dots + connector lines -->
+      <svg id="journey-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+        <!-- dashed background road (full path) -->
+        <path id="road-path" d=""/>
+        <!-- orange revealed road -->
+        <path id="road-path-revealed" d=""/>
+        <!-- stop markers rendered by JS -->
+        <g id="stop-markers"></g>
+      </svg>
+
+      <!-- Cyclist -->
+      <div id="cyclist-wrap">
+        <!-- Clean line-art cyclist SVG -->
+        <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+          <!-- rear wheel -->
+          <circle cx="14" cy="38" r="10" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- front wheel -->
+          <circle cx="42" cy="38" r="10" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- frame: chainstay -->
+          <line x1="14" y1="38" x2="28" y2="22" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- seat tube -->
+          <line x1="28" y1="22" x2="26" y2="32" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- seat stay -->
+          <line x1="14" y1="38" x2="26" y2="32" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- top tube + down tube -->
+          <line x1="28" y1="22" x2="38" y2="22" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="38" y1="22" x2="42" y2="38" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="26" y1="32" x2="42" y2="38" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- fork -->
+          <line x1="38" y1="22" x2="42" y2="38" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- handlebar -->
+          <line x1="38" y1="22" x2="40" y2="18" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <line x1="38" y1="18" x2="42" y2="18" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+          <!-- seat -->
+          <line x1="23" y1="22" x2="30" y2="22" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="26" y1="22" x2="26" y2="32" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- rider body -->
+          <path d="M28 22 Q30 16 36 14 Q40 12 41 16" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- head -->
+          <circle cx="38" cy="11" r="4" stroke="#1a1a1a" stroke-width="2" fill="#fff"/>
+          <!-- pedal cranks -->
+          <line x1="22" y1="32" x2="26" y2="36" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26" y1="28" x2="30" y2="32" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- orange accent: wheel spokes suggestion -->
+          <circle cx="14" cy="38" r="4" stroke="#e8622a" stroke-width="1.5" fill="none"/>
+          <circle cx="42" cy="38" r="4" stroke="#e8622a" stroke-width="1.5" fill="none"/>
+        </svg>
       </div>
 
-      <!-- Content Marketer -->
-      <div class="exp-item">
-        <div class="exp-dot teal"></div>
-        <div class="exp-body">
-          <div class="exp-meta">
-            <span class="exp-co teal-co">Swivl</span>
-            <span class="exp-date">Oct 2024 – Jun 2025</span>
-          </div>
-          <div class="exp-role">Content Marketer</div>
-          <div class="exp-desc">
-            Built Swivl's entire lifecycle email system in PostHog from scratch across 4 onboarding journeys, architected an SMS/email messaging framework across 8 behavior patterns. Drove organic growth: 151-topic SEO cluster, 132 blog rewrites, 190-post keyword audit, 711-record backlink directory. Tracked performance in GSC, managed social media across Meta and LinkedIn, owned the full content calendar, and gave creative direction to designers.
-          </div>
-          <div class="exp-pills">
-            <span class="pill">Lifecycle Email</span>
-            <span class="pill">PostHog Workflows</span>
-            <span class="pill">SEO Strategy</span>
-            <span class="pill">GSC Tracking</span>
-            <span class="pill">Social Media</span>
-            <span class="pill">Content Calendar</span>
-            <span class="pill">Creative Direction</span>
-            <span class="pill">UTM Attribution</span>
-            <span class="pill">CMS Operations</span>
-          </div>
-        </div>
-      </div>
+      <!-- Experience cards — positioned by JS -->
+      <div class="j-card" id="jcard-0"></div>
+      <div class="j-card" id="jcard-1"></div>
+      <div class="j-card" id="jcard-2"></div>
+      <div class="j-card" id="jcard-3"></div>
 
-      <!-- Zuper -->
-      <div class="exp-item">
-        <div class="exp-dot" style="background:#8888aa;box-shadow:0 0 0 4px rgba(136,136,170,0.12);"></div>
-        <div class="exp-body">
-          <div class="exp-meta">
-            <span class="exp-co" style="color:#c4b5fd;background:rgba(196,181,253,0.08);border-color:rgba(196,181,253,0.2);">Zuper</span>
-            <span class="exp-date">Feb 2023 – Jun 2024</span>
-          </div>
-          <div class="exp-role">Content Writer</div>
-          <div class="exp-desc">
-            Developed and executed SEO content strategy for an FSM SaaS platform — positioned 12+ blogs in competitive SERPs, drove 10% organic traffic growth and 15% engagement lift. Authored high-converting landing pages and Google Ads copy for PPC campaigns. Produced content across social, email, and long-form blog formats.
-          </div>
-          <div class="exp-pills">
-            <span class="pill">SEO Content</span>
-            <span class="pill">Landing Page Copy</span>
-            <span class="pill">Google Ads Copy</span>
-            <span class="pill">Keyword Strategy</span>
-          </div>
-        </div>
-      </div>
+    </div><!-- end journeySticky -->
+</section>
 
-      <!-- Fieldproxy -->
-      <div class="exp-item" style="padding-bottom:0;">
-        <div class="exp-dot" style="background:#3d3d3d;box-shadow:0 0 0 4px rgba(60,60,60,0.15);"></div>
-        <div class="exp-body">
-          <div class="exp-meta">
-            <span class="exp-co" style="color:#8888aa;background:rgba(136,136,170,0.08);border-color:rgba(136,136,170,0.2);">Fieldproxy (YC W22)</span>
-            <span class="exp-date">Oct 2022 – Dec 2022</span>
-          </div>
-          <div class="exp-role">Content Writer Intern</div>
-          <div class="exp-desc">Published 40+ pieces of content across SaaS and B2B topics; wrote product documentation and optimized website copy for search visibility. Conducted keyword research for Google Ads campaigns.</div>
-          <div class="exp-pills">
-            <span class="pill">Content Writing</span>
-            <span class="pill">Product Docs</span>
-            <span class="pill">Keyword Research</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<!-- WHAT I DO — ladder section heading (separate, above pinned section) -->
+<section id="work-heading" style="background:#fafaf8;padding:4rem 2rem 2rem;">
+  <div class="section-inner" style="max-width:1100px;">
+    <div class="section-label" style="color:#999;">Capabilities</div>
+    <h2 class="section-title" style="color:#111;font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,5rem);">What I do</h2>
+    <p class="section-sub" style="color:#555;">Six areas I own end-to-end. Scroll to explore each one.</p>
   </div>
 </section>
 
-<!-- WHAT I DO -->
-<section id="work" style="background:var(--bg2);">
-  <div class="section-inner">
-    <div class="section-label">Capabilities</div>
-    <h2 class="section-title">What I do</h2>
-    <p class="section-sub">Six areas I can own end-to-end — not just contribute to.</p>
-    <div class="work-grid">
-      <div class="work-card">
-        <div class="work-num">01</div>
-        <div class="work-title">Product Marketing &amp; GTM</div>
-        <div class="work-text">Translate product capabilities into market narratives. Build ICP frameworks, competitive battle cards, sales pitch assets, and execute full feature launch cycles from solution pages to social posts.</div>
-      </div>
-      <div class="work-card">
-        <div class="work-num">02</div>
-        <div class="work-title">Paid Acquisition</div>
-        <div class="work-text">Architect and manage Meta + Google campaigns. Build attribution systems, audit spend efficiency, segment audiences by behavioral quality, and reallocate budget based on activation signals — not vanity metrics.</div>
-      </div>
-      <div class="work-card">
-        <div class="work-num">03</div>
-        <div class="work-title">Lifecycle &amp; Automation</div>
-        <div class="work-text">Build lifecycle email systems in PostHog. Map user journeys, design behavior-triggered workflows, implement multi-channel automation (email + SMS), and close attribution gaps with proper UTM architecture.</div>
-      </div>
-      <div class="work-card">
-        <div class="work-num">04</div>
-        <div class="work-title">SEO &amp; Organic Growth</div>
-        <div class="work-text">Build topic clusters, run keyword audits, architect programmatic SEO at scale, track performance in GSC, fix technical SEO issues, and systematically build backlinks through a structured directory approach.</div>
-      </div>
-      <div class="work-card">
-        <div class="work-num">05</div>
-        <div class="work-title">Social &amp; Content Ops</div>
-        <div class="work-text">Own the content calendar and social media across Meta (Instagram, Facebook) and LinkedIn. Brief designers with detailed asset specs, coordinate cross-team publishing, and maintain consistent brand voice.</div>
-      </div>
-      <div class="work-card">
-        <div class="work-num">06</div>
-        <div class="work-title">Team &amp; Project Leadership</div>
-        <div class="work-text">Lead cross-functional marketing teams — PPC, SEO, design, development. Set priorities, define workflows, manage tasks in Linear, remove blockers, and align execution to marketing goals and deadlines.</div>
-      </div>
-    </div>
-  </div>
+<!-- WHAT I DO — pinned ladder scroll section -->
+<section id="work" style="background:#fafaf8;padding:0;position:relative;overflow:hidden;">
+
+  <style>
+    /* ── LADDER SECTION ─────────────────────────────────── */
+    #work { background: #fafaf8 !important; }
+
+    #ladder-sticky {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    #ladder-layout {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-start;
+      padding: 2.5rem 3rem 2.5rem 4rem;
+      gap: 0;
+      justify-content: center;
+    }
+
+    /* ── CARDS COLUMN — centered ── */
+    #ladder-cards {
+      flex: 0 0 580px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 4rem;
+      align-self: center;
+    }
+
+    .lad-card {
+      background: #fff;
+      border: 2px solid #111;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 4px 4px 0 #F5C842;
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .lad-card.active {
+      box-shadow: 6px 6px 0 #111;
+    }
+
+    /* collapsed header — always visible */
+    .lad-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      border-left: 4px solid transparent;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .lad-card.active .lad-card-header {
+      border-left-color: #F5C842;
+      background: #fffdf5;
+    }
+
+    .lad-card-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: #ddd;
+      min-width: 32px;
+      transition: color 0.3s ease;
+      line-height: 1;
+    }
+    .lad-card.active .lad-card-num { color: #111; }
+
+    .lad-card-icon {
+      font-size: 1.2rem;
+      opacity: 0.4;
+      transition: opacity 0.3s;
+    }
+    .lad-card.active .lad-card-icon { opacity: 1; }
+
+    .lad-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+    .lad-card.active .lad-card-title { color: #111; }
+
+    /* expandable body */
+    .lad-card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.4s ease;
+      padding: 0 1.1rem;
+    }
+    .lad-card.active .lad-card-body {
+      max-height: 300px;
+      padding: 0 1.1rem 1rem;
+    }
+
+    .lad-card-desc {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+      border-top: 1px solid #eee;
+      padding-top: 0.75rem;
+    }
+
+    .lad-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .lad-card-tag {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: #FFF3B0;
+      color: #111;
+      border: 1px solid rgba(0,0,0,0.12);
+      font-weight: 600;
+    }
+
+    /* ── LADDER COLUMN — right side ── */
+    #ladder-col {
+      width: 180px;
+      flex-shrink: 0;
+      position: relative;
+      height: calc(100vh - 5rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+    }
+
+    #ladder-svg {
+      width: 160px;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    /* The climbing figure */
+    #ladder-figure {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      will-change: top;
+      transition: top 0.4s cubic-bezier(0.4,0,0.2,1);
+      pointer-events: none;
+    }
+
+    /* Scroll progress hint */
+    #ladder-hint {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: #bbb;
+      white-space: nowrap;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <div id="ladderSticky" style="position:relative;height:100vh;width:100%;overflow:hidden;will-change:transform;">
+    <div id="ladder-layout">
+
+      <!-- ── LEFT: Accordion cards ── -->
+      <div id="ladder-cards">
+
+        <div class="lad-card active" id="lcard-0">
+          <div class="lad-card-header">
+            <span class="lad-card-num">01</span>
+            <span class="lad-card-icon">🎯</span>
+            <span class="lad-card-title">Product Marketing and GTM</span>
+          </div>
+          <div class="lad-card-body">
+            <p class="lad-card-desc">Owned end-to-end GTM strategy for Swivl across 5 trade verticals. Translated AI product capabilities into pain-point messaging, built ICP frameworks from PostHog cohorts, created competitive battle cards, and planned full feature launch cycles — solution pages, social posts, creative campaigns.</p>
+            <div class="lad-card-tags">
+              <span class="lad-card-tag">GTM Strategy</span><span class="lad-card-tag">ICP Development</span>
+              <span class="lad-card-tag">Competitive Intel</span><span class="lad-card-tag">Feature Launches</span>
+              <span class="lad-card-tag">Sales Enablement</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lad-card" id="lcard-1">
+          <div class="lad-card-header">
+            <span class="lad-card-num">02</span>
+            <span class="lad-card-icon">📈</span>
+            <span class="lad-card-title">Paid Acquisition</span>
+          </div>
+          <div class="lad-card-body">
+            <p class="lad-card-desc">Managed $800/day across Meta and Google. Led an 8-month attribution audit uncovering that 99.6% of signups lacked UTM data. Rebuilt campaign architecture, eliminated auction overlap, and built PostHog-linked dashboards to measure activation quality — not just clicks.</p>
+            <div class="lad-card-tags">
+              <span class="lad-card-tag">Meta Ads</span><span class="lad-card-tag">Google Ads</span>
+              <span class="lad-card-tag">UTM Attribution</span><span class="lad-card-tag">CBO Architecture</span>
+              <span class="lad-card-tag">Budget Optimisation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lad-card" id="lcard-2">
+          <div class="lad-card-header">
+            <span class="lad-card-num">03</span>
+            <span class="lad-card-icon">⚙️</span>
+            <span class="lad-card-title">Lifecycle and Automation</span>
+          </div>
+          <div class="lad-card-body">
+            <p class="lad-card-desc">Built Swivl's complete lifecycle email system in PostHog from zero — 4 goal-specific onboarding journeys, SMS/email framework across 8 behavior patterns, UTM convention across all CTAs. Recovered 247 at-risk users by diagnosing and fixing broken orchestration workflows.</p>
+            <div class="lad-card-tags">
+              <span class="lad-card-tag">PostHog Workflows</span><span class="lad-card-tag">Onboarding Flows</span>
+              <span class="lad-card-tag">Behavioral Triggers</span><span class="lad-card-tag">SMS Marketing</span>
+              <span class="lad-card-tag">UTM Tracking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lad-card" id="lcard-3">
+          <div class="lad-card-header">
+            <span class="lad-card-num">04</span>
+            <span class="lad-card-icon">🔍</span>
+            <span class="lad-card-title">SEO and Organic Growth</span>
+          </div>
+          <div class="lad-card-body">
+            <p class="lad-card-desc">Architected a 151-topic SEO cluster across 9 clusters and 5 trade industries. Rewrote 132 blog posts, audited 190 published posts via GSC, built a 711-record backlink directory using DataForSEO. Fixed redirect loops, JS rendering failures, and duplicate meta title issues.</p>
+            <div class="lad-card-tags">
+              <span class="lad-card-tag">Programmatic SEO</span><span class="lad-card-tag">Technical SEO</span>
+              <span class="lad-card-tag">GSC Tracking</span><span class="lad-card-tag">Keyword Clustering</span>
+              <span class="lad-card-tag">Link Building</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lad-card" id="lcard-4">
+          <div class="lad-card-header">
+            <span class="lad-card-num">05</span>
+            <span class="lad-card-icon">📱</span>
+            <span class="lad-card-title">Social and Content Ops</span>
+          </div>
+          <div class="lad-card-body">
+            <p class="lad-card-desc">Managed organic social across Meta (Instagram, Facebook) and LinkedIn. Built and owned the content calendar, briefed designers with detailed asset specs, coordinated cross-team publishing, and maintained brand voice consistency across every channel and format.</p>
+            <div class="lad-card-tags">
+              <span class="lad-card-tag">Content Calendar</span><span class="lad-card-tag">Meta and LinkedIn</span>
+              <span class="lad-card-tag">Creative Direction</span><span class="lad-card-tag">Brand Voice</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lad-card" id="lcard-5">
+          <div class="lad-card-header">
+            <span class="lad-card-num">06</span>
+            <span class="lad-card-icon">🧭</span>
+            <span class="lad-card-title">Team and Project Leadership</span>
+          </div>
+          <div class="lad-card-body">
+            <p class="lad-card-desc">Led a cross-functional team of 5 (PPC, web dev, SEO, 2 designers). Set sprint priorities, defined workflows, managed tasks in Linear, removed blockers, and gave creative direction — writing detailed design briefs for every campaign and feature launch.</p>
+            <div class="lad-card-tags">
+              <span class="lad-card-tag">Cross-functional Teams</span><span class="lad-card-tag">Workflow Management</span>
+              <span class="lad-card-tag">Task Prioritisation</span><span class="lad-card-tag">Linear</span>
+              <span class="lad-card-tag">Sprint Planning</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end ladder-cards -->
+
+      <!-- ── RIGHT: Ladder + figure ── -->
+      <div id="ladder-col">
+
+        <!-- Ladder SVG: rails + 6 rungs -->
+        <svg id="ladder-svg" viewBox="0 0 160 600" preserveAspectRatio="xMidYMid meet" fill="none">
+          <!-- left rail -->
+          <line x1="44" y1="20" x2="44" y2="580" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+          <!-- right rail -->
+          <line x1="116" y1="20" x2="116" y2="580" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+          <!-- 6 rungs evenly spaced at y=80,164,248,332,416,500 -->
+          <line x1="44" y1="80"  x2="116" y2="80"  stroke="#111" stroke-width="5" stroke-linecap="round"/>
+          <line x1="44" y1="164" x2="116" y2="164" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+          <line x1="44" y1="248" x2="116" y2="248" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+          <line x1="44" y1="332" x2="116" y2="332" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+          <line x1="44" y1="416" x2="116" y2="416" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+          <line x1="44" y1="500" x2="116" y2="500" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+          <!-- yellow highlight rings on rungs -->
+          <circle cx="44"  cy="80"  r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="116" cy="80"  r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="44"  cy="164" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="116" cy="164" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="44"  cy="248" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="116" cy="248" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="44"  cy="332" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="116" cy="332" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="44"  cy="416" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="116" cy="416" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="44"  cy="500" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+          <circle cx="116" cy="500" r="5" fill="#F5C842" stroke="#111" stroke-width="2"/>
+        </svg>
+
+        <!-- Animated climbing figure (positioned in JS) -->
+        <div id="ladder-figure">
+          <svg viewBox="0 0 60 80" width="60" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- head -->
+            <circle cx="30" cy="10" r="9" fill="#F5C842" stroke="#111" stroke-width="2.5"/>
+            <!-- body -->
+            <line x1="30" y1="19" x2="30" y2="46" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+            <!-- left arm (holding left rail) -->
+            <path d="M30 26 Q18 24 8 28" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- right arm (holding right rail) -->
+            <path d="M30 26 Q42 24 52 28" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- left leg (on rung, bent) -->
+            <path d="M30 46 Q20 54 12 58" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <line x1="12" y1="58" x2="5" y2="58" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- right leg (dangling, mid-step) -->
+            <path d="M30 46 Q40 50 46 62" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <line x1="46" y1="62" x2="52" y2="58" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div id="ladder-hint">↓ scroll</div>
+      </div><!-- end ladder-col -->
+
+    </div><!-- end ladder-layout -->
+  </div><!-- end ladderSticky -->
+
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
     <div class="section-label">Toolkit</div>
-    <h2 class="section-title">Skills &amp; tools</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">🎯</div>
-        <div class="skill-name">Product Marketing</div>
-        <div class="skill-tags">
-          <span class="skill-tag">GTM Strategy</span>
-          <span class="skill-tag">ICP Development</span>
-          <span class="skill-tag">Positioning</span>
-          <span class="skill-tag">Battle Cards</span>
-          <span class="skill-tag">Sales Enablement</span>
-          <span class="skill-tag">Feature Launches</span>
+    <h2 class="section-title">Tools I work with</h2>
+    <p class="section-sub">Hover each tool to see what I've actually done with it.</p>
+
+    <div class="tool-diamond-wrap">
+
+      <!-- Row 1: 2 tiles -->
+      <div class="tool-row">
+        <div class="tool-tile tip-down">
+          <div class="tool-logo">
+            <!-- GA4 -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#fff"/>
+              <rect x="8" y="28" width="8" height="14" rx="2" fill="#F9AB00"/>
+              <rect x="20" y="18" width="8" height="24" rx="2" fill="#E37400"/>
+              <rect x="32" y="8" width="8" height="34" rx="2" fill="#F9AB00"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>GA4</strong>Tracked campaign traffic, set up conversion events, built funnel reports, and monitored organic vs paid channel performance.</div>
+        </div>
+        <div class="tool-tile tip-down">
+          <div class="tool-logo">
+            <!-- GSC -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="#4285F4" stroke-width="4"/>
+              <circle cx="24" cy="24" r="9" stroke="#34A853" stroke-width="4"/>
+              <circle cx="24" cy="24" r="3" fill="#EA4335"/>
+              <line x1="24" y1="6" x2="24" y2="15" stroke="#FBBC05" stroke-width="3"/>
+              <line x1="24" y1="33" x2="24" y2="42" stroke="#FBBC05" stroke-width="3"/>
+              <line x1="6" y1="24" x2="15" y2="24" stroke="#FBBC05" stroke-width="3"/>
+              <line x1="33" y1="24" x2="42" y2="24" stroke="#FBBC05" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Google Search Console</strong>Monitored CTR and impressions, fixed index coverage gaps, tracked keyword position trends, and prioritised content fixes.</div>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">📈</div>
-        <div class="skill-name">Growth Marketing</div>
-        <div class="skill-tags">
-          <span class="skill-tag teal">Paid Acquisition</span>
-          <span class="skill-tag teal">Meta Ads</span>
-          <span class="skill-tag teal">Google Ads</span>
-          <span class="skill-tag teal">CBO Architecture</span>
-          <span class="skill-tag teal">Attribution</span>
+
+      <!-- Row 2: 3 tiles -->
+      <div class="tool-row">
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- HubSpot -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="14" r="6" fill="#FF7A59"/>
+              <circle cx="32" cy="14" r="3" fill="#fff"/>
+              <path d="M32 20v8M24 28H16a6 6 0 0 0 0 12h0a6 6 0 0 0 6-6v-6" stroke="#FF7A59" stroke-width="3" stroke-linecap="round"/>
+              <path d="M32 28v6a6 6 0 0 0 6 6h0a6 6 0 0 0 0-12h-6z" stroke="#FF7A59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>HubSpot</strong>Held Content Marketing certification; used for email sequences, lead nurturing flows, and CRM-aligned content strategy.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- PostHog -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40 L24 8 L40 40 Z" fill="#F54E00" opacity="0.9"/>
+              <path d="M16 40 L24 24 L32 40 Z" fill="#fff" opacity="0.85"/>
+              <circle cx="24" cy="36" r="3" fill="#F54E00"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>PostHog</strong>Built complete lifecycle email workflows, ran cohort analysis, created quality scoring models, and tracked funnel drop-offs and activation metrics.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Ahrefs -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 38 L22 10 L34 38" stroke="#FF8C00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M15 28 L29 28" stroke="#FF8C00" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Ahrefs</strong>Conducted keyword research, built 711-record backlink directories, tracked domain authority, and identified content gap opportunities across 5 verticals.</div>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">⚙️</div>
-        <div class="skill-name">Lifecycle &amp; Automation</div>
-        <div class="skill-tags">
-          <span class="skill-tag amber">PostHog Workflows</span>
-          <span class="skill-tag amber">Onboarding Flows</span>
-          <span class="skill-tag amber">Behavioral Triggers</span>
-          <span class="skill-tag amber">SMS Marketing</span>
-          <span class="skill-tag amber">UTM Tracking</span>
+
+      <!-- Row 3: 4 tiles (widest) -->
+      <div class="tool-row">
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Screaming Frog -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="24" cy="30" rx="12" ry="10" fill="#7DC000"/>
+              <circle cx="18" cy="22" r="5" fill="#7DC000"/>
+              <circle cx="30" cy="22" r="5" fill="#7DC000"/>
+              <circle cx="18" cy="21" r="2.5" fill="#fff"/>
+              <circle cx="30" cy="21" r="2.5" fill="#fff"/>
+              <circle cx="18" cy="21" r="1.2" fill="#333"/>
+              <circle cx="30" cy="21" r="1.2" fill="#333"/>
+              <path d="M20 33 Q24 36 28 33" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <line x1="14" y1="18" x2="10" y2="13" stroke="#7DC000" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="34" y1="18" x2="38" y2="13" stroke="#7DC000" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Screaming Frog</strong>Crawled Swivl's site to identify redirect loops, broken links, duplicate meta tags, and JavaScript rendering issues blocking indexation.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Figma -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="8" width="10" height="10" rx="5" fill="#F24E1E"/>
+              <rect x="24" y="8" width="10" height="10" rx="5" fill="#FF7262"/>
+              <rect x="14" y="18" width="10" height="10" rx="0" fill="#A259FF"/>
+              <rect x="14" y="28" width="10" height="10" rx="5" fill="#1ABCFE"/>
+              <circle cx="29" cy="23" r="5" fill="#0ACF83"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Figma</strong>Audited 15+ pages of Swivl's ad creative library, wrote creative briefs for designers, and reviewed landing page mockups for copy-design alignment.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Notion -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="8" width="28" height="32" rx="4" fill="#fff" stroke="#1a1a1a" stroke-width="2.5"/>
+              <path d="M16 16h16M16 22h12M16 28h10" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M10 12 L10 8 L14 8" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Notion</strong>Used for content planning, editorial calendars, campaign briefs, and maintaining team knowledge bases and SOPs.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Linear -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 30 L18 8 L40 8 L40 40 L8 40 Z" fill="#5E6AD2" opacity="0.15" rx="4"/>
+              <path d="M12 36 L24 12 L38 12" stroke="#5E6AD2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M12 36 L38 36" stroke="#5E6AD2" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="38" cy="12" r="3" fill="#5E6AD2"/>
+              <circle cx="12" cy="36" r="3" fill="#5E6AD2"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Linear</strong>Managed weekly sprint tasks for the 5-person MARS team — assigned issues, set priorities, tracked milestones, and maintained campaign delivery timelines.</div>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">🔍</div>
-        <div class="skill-name">SEO &amp; Content</div>
-        <div class="skill-tags">
-          <span class="skill-tag green">Programmatic SEO</span>
-          <span class="skill-tag green">Technical SEO</span>
-          <span class="skill-tag green">Keyword Clustering</span>
-          <span class="skill-tag green">GSC</span>
-          <span class="skill-tag green">Link Building</span>
+
+      <!-- Row 4: 3 tiles -->
+      <div class="tool-row">
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Claude -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" fill="#CC785C" opacity="0.15"/>
+              <path d="M16 32 Q14 24 20 18 Q24 14 28 18 Q32 22 30 28 Q28 34 22 34 Q18 34 16 32Z" fill="#CC785C"/>
+              <path d="M28 18 Q34 16 36 22 Q38 28 34 32" stroke="#CC785C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Claude (Anthropic)</strong>Used to build marketing infrastructure, write and optimise 130+ blog posts, design lifecycle systems, and run attribution audits at scale.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- ChatGPT -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" fill="#10A37F" opacity="0.12"/>
+              <path d="M24 12 C16 12 12 17 12 22 C12 26 14 29 18 31 L18 36 L23 32 C23.3 32 23.7 32 24 32 C32 32 36 27 36 22 C36 17 32 12 24 12Z" fill="#10A37F"/>
+              <circle cx="19" cy="22" r="1.8" fill="#fff"/>
+              <circle cx="24" cy="22" r="1.8" fill="#fff"/>
+              <circle cx="29" cy="22" r="1.8" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>ChatGPT</strong>Used for rapid copy ideation, ad copy variants, competitive research prompts, and drafting first-pass frameworks for GTM strategies.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Canva -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" fill="#7D2AE7" opacity="0.12"/>
+              <path d="M18 30 Q14 24 18 18 Q22 13 28 16 Q34 19 32 26 Q30 32 24 33 Q20 33 18 30Z" fill="#7D2AE7" opacity="0.8"/>
+              <path d="M26 20 Q30 18 32 22" stroke="#00C4CC" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Canva</strong>Created social media graphics, ad creative templates, pitch deck visuals, and blog header images — briefed and reviewed designer output.</div>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">📊</div>
-        <div class="skill-name">Analytics</div>
-        <div class="skill-tags">
-          <span class="skill-tag">PostHog</span>
-          <span class="skill-tag">Cohort Analysis</span>
-          <span class="skill-tag">Funnel Analysis</span>
-          <span class="skill-tag">Quality Scoring</span>
-          <span class="skill-tag">DataForSEO</span>
+
+      <!-- Row 5: 2 tiles -->
+      <div class="tool-row">
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Meta Ads -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 28 C8 18 14 12 20 14 C23 15 24 20 24 24 C24 20 25 15 28 14 C34 12 40 18 40 28 C40 35 35 38 31 36 C28 34 26 28 24 24 C22 28 20 34 17 36 C13 38 8 35 8 28Z" fill="url(#metaGrad)"/>
+              <defs><linearGradient id="metaGrad" x1="8" y1="14" x2="40" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0081FB"/><stop offset="100%" stop-color="#0099FF"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Meta Ads Manager</strong>Managed $800/day budget, restructured CBO campaigns, fixed pixel attribution, audited 8-month spend history, and built quality-score dashboards.</div>
+        </div>
+        <div class="tool-tile">
+          <div class="tool-logo">
+            <!-- Google Ads -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 36 L20 18" stroke="#4285F4" stroke-width="5" stroke-linecap="round"/>
+              <path d="M20 18 L36 36" stroke="#FBBC05" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="10" cy="36" r="5" fill="#34A853"/>
+              <circle cx="36" cy="36" r="5" fill="#EA4335"/>
+              <circle cx="20" cy="18" r="5" fill="#4285F4"/>
+            </svg>
+          </div>
+          <div class="tool-tooltip"><strong>Google Ads</strong>Ran keyword campaigns, wrote ad copy, fixed UTM macro bugs causing attribution misfire, and cross-referenced performance with PostHog cohort data.</div>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">🛠️</div>
-        <div class="skill-name">Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag pink">Figma</span>
-          <span class="skill-tag pink">Canva</span>
-          <span class="skill-tag pink">Linear</span>
-          <span class="skill-tag pink">HubSpot</span>
-          <span class="skill-tag pink">Meta Ads Manager</span>
-          <span class="skill-tag pink">GSC</span>
-        </div>
-      </div>
-    </div>
+
+    </div><!-- end diamond wrap -->
   </div>
 </section>
 
 <!-- CERTS & AWARDS -->
-<section style="background:var(--bg2);">
+<section style="background:#fafaf8;">
   <div class="section-inner">
     <div class="section-label">Recognition</div>
     <h2 class="section-title">Certifications &amp; Awards</h2>
-
     <div class="award-card">
       <div class="award-icon">🏆</div>
       <div class="award-text">
@@ -564,22 +1327,9 @@
         <div class="award-sub">Swivl · Awarded for outstanding contribution to growth and campaign performance across paid acquisition, lifecycle email, and SEO systems.</div>
       </div>
     </div>
-
     <div class="certs-grid" style="margin-top:1.5rem;">
-      <div class="cert-card">
-        <div class="cert-badge pma">📌</div>
-        <div>
-          <div class="cert-name">Product Marketing Certified: Core</div>
-          <div class="cert-by">Product Marketing Alliance (PMA)</div>
-        </div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-badge hs">🟡</div>
-        <div>
-          <div class="cert-name">Content Marketing Certification</div>
-          <div class="cert-by">HubSpot Academy</div>
-        </div>
-      </div>
+      <div class="cert-card"><div class="cert-badge pma">📌</div><div><div class="cert-name">Product Marketing Certified: Core</div><div class="cert-by">Product Marketing Alliance (PMA)</div></div></div>
+      <div class="cert-card"><div class="cert-badge hs">🟡</div><div><div class="cert-name">Content Marketing Certification</div><div class="cert-by">HubSpot Academy</div></div></div>
     </div>
   </div>
 </section>
@@ -589,48 +1339,350 @@
   <div class="section-inner" style="text-align:center;">
     <div class="section-label" style="text-align:center;">Let's connect</div>
     <h2 class="section-title" style="text-align:center;">Open to opportunities</h2>
-    <p class="section-sub" style="margin:0.75rem auto 0; text-align:center;">Looking for product marketer or growth marketer roles at B2B SaaS companies. Happy to chat.</p>
+    <p class="section-sub" style="margin:0.75rem auto 0;text-align:center;">Looking for product marketer or growth marketer roles at B2B SaaS companies. Happy to chat.</p>
     <div class="contact-box">
       <div class="contact-name">Suman Raj</div>
       <div class="contact-role">Product Marketer &amp; Growth Marketer · Bengaluru, India</div>
       <div class="contact-links">
-        <a class="contact-link" href="mailto:sumanin031@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          sumanin031@gmail.com
-        </a>
-        <a class="contact-link" href="https://linkedin.com/in/suman-raj-" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          linkedin.com/in/suman-raj-
-        </a>
-        <a class="contact-link" href="tel:+919842928362">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +91 98429 28362
-        </a>
+        <a class="contact-link" href="mailto:sumanin031@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>sumanin031@gmail.com</a>
+        <a class="contact-link" href="https://linkedin.com/in/suman-raj-" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/suman-raj-</a>
+        <a class="contact-link" href="tel:+919842928362"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 98429 28362</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  Built with intention · Suman Raj · 2025
-</footer>
+<footer>Built with intention · Suman Raj · 2025</footer>
 
 <script>
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(l => l.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(l.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
-  }));
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.style.animation = 'fadeUp 0.5s ease forwards';
+/* ─── JOURNEY DATA ───────────────────────────────────────────────── */
+var journeyData = [
+  { company:'Fieldproxy (YC W22)', date:'Oct 2022 – Dec 2022', role:'Content Writer Intern',
+    desc:'Published 40+ pieces of content across SaaS and B2B topics. Wrote product documentation and optimised website copy for search. Conducted keyword research for Google Ads campaigns.',
+    pills:['Content Writing','Product Docs','Keyword Research','SEO'] },
+  { company:'Zuper', date:'Feb 2023 – Jun 2024', role:'Content Writer',
+    desc:'Positioned 12+ blogs in competitive SERPs, drove 10% organic traffic growth and 15% engagement lift. Authored high-converting landing pages and Google Ads copy for PPC campaigns.',
+    pills:['SEO Content','Landing Pages','Google Ads Copy','Keyword Strategy'] },
+  { company:'Swivl', date:'Oct 2024 – Jun 2025', role:'Content Marketer',
+    desc:"Built Swivl's lifecycle email system in PostHog from scratch across 4 onboarding journeys. Drove organic growth: 151-topic SEO cluster, 132 blog rewrites, 190-post keyword audit.",
+    pills:['Lifecycle Email','PostHog','SEO Strategy','Social Media','Content Calendar'] },
+  { company:'Swivl', date:'Jul 2025 – Present', role:'Product Marketer',
+    desc:'Owned end-to-end GTM strategy across 5 trade verticals. Built ICP frameworks from PostHog cohorts, sales pitch assets, competitive battle cards. Managed $800/day paid media across Meta and Google.',
+    pills:['GTM Strategy','Sales Enablement','Competitive Intel','Meta + Google Ads','ICP Development'] }
+];
+
+/* ─── JOURNEY SECTION ────────────────────────────────────────────── */
+window.addEventListener('load', function () {
+  var stickyEl   = document.getElementById('journeySticky');
+  var svgEl      = document.getElementById('journey-svg');
+  var roadPath   = document.getElementById('road-path');
+  var roadReveal = document.getElementById('road-path-revealed');
+  var markersEl  = document.getElementById('stop-markers');
+  var cyclist    = document.getElementById('cyclist-wrap');
+  if (!stickyEl || !roadPath) return;
+
+  var VW = 1000, VH = 700;
+  var pathD =
+    'M 160,50 C 200,150 400,180 540,210 C 700,245 880,265 880,360 C 880,455 700,475 540,505 C 380,535 180,555 160,640';
+
+  roadPath.setAttribute('d', pathD);
+  roadReveal.setAttribute('d', pathD);
+
+  var totalLen = roadPath.getTotalLength();
+  roadReveal.style.strokeDasharray  = totalLen;
+  roadReveal.style.strokeDashoffset = totalLen;
+
+  var stopFracs = [0.20, 0.40, 0.63, 0.83];
+
+  /* Convert SVG viewBox coords to local pixels inside the sticky div.
+     Uses clientWidth/clientHeight (layout-stable, unaffected by GSAP pin transform). */
+  function toLocal(svgX, svgY) {
+    var w = svgEl.clientWidth  || stickyEl.clientWidth;
+    var h = svgEl.clientHeight || stickyEl.clientHeight;
+    var scale = Math.min(w / VW, h / VH);
+    var ox = (w - VW * scale) / 2;
+    var oy = (h - VH * scale) / 2;
+    return { x: svgX * scale + ox, y: svgY * scale + oy };
+  }
+
+  function build() {
+    markersEl.innerHTML = '';
+
+    /* Card layout per wireframe sketch:
+       i=0 (Fieldproxy) : stop LEFT  → card BOTTOM-LEFT  of dot
+       i=1 (Zuper)      : stop RIGHT → card TOP-RIGHT     of dot
+       i=2 (Swivl CM)   : stop LEFT  → card TOP-RIGHT     of dot
+       i=3 (Swivl PM)   : stop RIGHT → card BOTTOM-LEFT   of dot  */
+    var cardW = 268;
+    var cardH = 210; /* approx rendered height */
+    var gap   = 30;  /* gap between dot edge and card */
+
+    stopFracs.forEach(function (frac, i) {
+      var svgPt = roadPath.getPointAtLength(frac * totalLen);
+      var sc    = toLocal(svgPt.x, svgPt.y);
+
+      /* ── Stop markers ── */
+      var outer = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      outer.setAttribute('cx', svgPt.x); outer.setAttribute('cy', svgPt.y);
+      outer.setAttribute('r','14'); outer.setAttribute('fill','#fff');
+      outer.setAttribute('stroke','#111'); outer.setAttribute('stroke-width','3');
+      markersEl.appendChild(outer);
+
+      var inner = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      inner.setAttribute('cx', svgPt.x); inner.setAttribute('cy', svgPt.y);
+      inner.setAttribute('r','5'); inner.setAttribute('fill','#F5C842');
+      inner.setAttribute('stroke','#111'); inner.setAttribute('stroke-width','2');
+      inner.id = 'si' + i;
+      inner.style.cssText = 'opacity:0;transition:opacity 0.35s ease;';
+      markersEl.appendChild(inner);
+
+      /* ── Card content ── */
+      var card = document.getElementById('jcard-' + i);
+      var exp  = journeyData[i];
+      card.innerHTML =
+        '<div class="j-card-co">' + exp.company + '</div>' +
+        '<div class="j-card-date">' + exp.date + '</div>' +
+        '<div class="j-card-role">' + exp.role + '</div>' +
+        '<div class="j-card-desc">' + exp.desc + '</div>' +
+        '<div class="j-card-pills">' +
+          exp.pills.map(function(p){ return '<span class="j-card-pill">'+p+'</span>'; }).join('') +
+        '</div>';
+
+      card.style.width = cardW + 'px';
+
+      /* ── Card positioning per wireframe ── */
+      var cx = sc.x; /* dot pixel X */
+      var cy = sc.y; /* dot pixel Y */
+
+      if (i === 0) {
+        /* Fieldproxy: stop ~left — card BOTTOM-LEFT of dot */
+        card.style.left = Math.max(8, cx - cardW - gap) + 'px';
+        card.style.top  = (cy + gap) + 'px';
+      } else if (i === 1) {
+        /* Zuper: stop ~right — card TOP-RIGHT but shifted LEFT to avoid overlap */
+        card.style.left = Math.max(8, cx - cardW - gap * 2) + 'px';
+        card.style.top  = Math.max(8, cy - cardH - gap) + 'px';
+      } else if (i === 2) {
+        /* Swivl CM: stop ~left — card TOP-RIGHT of dot */
+        card.style.left = (cx + gap) + 'px';
+        card.style.top  = Math.max(8, cy - cardH - gap) + 'px';
+      } else if (i === 3) {
+        /* Swivl PM: stop ~right — card BOTTOM-RIGHT (fully visible) */
+        card.style.left = (cx + gap) + 'px';
+        card.style.top  = (cy + gap) + 'px';
+      }
+
+    });
+
+    moveCyclist(0);
+  }
+
+  function moveCyclist(progress) {
+    var len   = Math.min(progress * totalLen, totalLen);
+    var pt    = roadPath.getPointAtLength(len);
+    var ptA   = roadPath.getPointAtLength(Math.min(len + 8, totalLen));
+    var angle = Math.atan2(ptA.y - pt.y, ptA.x - pt.x) * 180 / Math.PI;
+    var sc    = toLocal(pt.x, pt.y);
+    cyclist.style.transform = 'translate(' + (sc.x - 28) + 'px,' + (sc.y - 36) + 'px) rotate(' + angle + 'deg)';
+  }
+
+  var revealed = [false,false,false,false];
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger   : stickyEl,
+      pin       : true,
+      pinSpacing: true,
+      start     : 'top top',
+      end       : '+=600%',
+      scrub     : 2,
+      onUpdate  : function (self) {
+        var p = self.progress;
+        roadReveal.style.strokeDashoffset = totalLen * (1 - p);
+        moveCyclist(p);
+        stopFracs.forEach(function (frac, i) {
+          var here = p >= frac;
+          if (here && !revealed[i]) {
+            revealed[i] = true;
+            document.getElementById('si'+i).style.opacity = '1';
+            document.getElementById('jcard-'+i).classList.add('visible');
+          }
+          if (!here && revealed[i]) {
+            revealed[i] = false;
+            document.getElementById('si'+i).style.opacity = '0';
+            document.getElementById('jcard-'+i).classList.remove('visible');
+          }
+        });
+      }
+    }
+  });
+
+  setTimeout(build, 100);
+
+  var rt;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt);
+    rt = setTimeout(function () { build(); ScrollTrigger.refresh(); }, 250);
+  });
+});
+
+/* ─── EXPANDABLE CARD SLIDER ─────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+  var cards   = Array.from(document.querySelectorAll('.exp-card'));
+  var dotsEl  = document.getElementById('sliderDots');
+  var prevBtn = document.getElementById('sliderPrev');
+  var nextBtn = document.getElementById('sliderNext');
+  if (!cards.length || !dotsEl || !prevBtn || !nextBtn) return;
+
+  var active = 0;
+
+  cards.forEach(function (_, i) {
+    var d = document.createElement('div');
+    d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', function () { go(i); });
+    dotsEl.appendChild(d);
+  });
+
+  function go(idx) {
+    cards[active].classList.remove('active');
+    dotsEl.children[active].classList.remove('active');
+    active = Math.max(0, Math.min(idx, cards.length - 1));
+    cards[active].classList.add('active');
+    dotsEl.children[active].classList.add('active');
+    prevBtn.disabled = (active === 0);
+    nextBtn.disabled = (active === cards.length - 1);
+  }
+
+  prevBtn.addEventListener('click', function () { go(active - 1); });
+  nextBtn.addEventListener('click', function () { go(active + 1); });
+  cards.forEach(function (c, i) {
+    c.addEventListener('click', function () { if (active !== i) go(i); });
+  });
+
+  prevBtn.disabled = true;
+  nextBtn.disabled = false;
+});
+
+
+/* ─── LADDER SCROLL SECTION ──────────────────────────────────────── */
+window.addEventListener('load', function () {
+  var stickyEl = document.getElementById('ladderSticky');
+  var figure   = document.getElementById('ladder-figure');
+  var cards    = Array.from(document.querySelectorAll('.lad-card'));
+  var hint     = document.getElementById('ladder-hint');
+  var ladderCol = document.getElementById('ladder-col');
+
+  if (!stickyEl || !figure || !cards.length) return;
+
+  /* Convert SVG rung Y → pixel top inside ladderCol */
+  function rungToPixel(svgY) {
+    var svgEl = document.getElementById('ladder-svg');
+    if (!svgEl) return 0;
+    var h = svgEl.clientHeight || ladderCol.clientHeight;
+    return (svgY / 600) * h;
+  }
+
+  /* rungSvgY: position at start + bottom of each rung in SVG viewBox (0 0 160 600)
+     7 entries = start position + 6 rung landings */
+  var rungSvgY = [10, 80, 164, 248, 332, 416, 500];
+
+  function setFigure(progress) {
+    /* Map progress 0→1 across 6 segments (one per card) */
+    var seg  = Math.min(progress * 6, 5.999);
+    var lo   = Math.floor(seg);
+    var t    = seg - lo;
+    var y0   = rungSvgY[lo];
+    var y1   = rungSvgY[lo + 1];
+    var svgY = y0 + (y1 - y0) * t;
+
+    var pxY = rungToPixel(svgY) - 40;
+    figure.style.top = Math.max(0, pxY) + 'px';
+
+    /* Wiggle arms by alternating scaleX every half-rung */
+    var leg = figure.querySelector('svg');
+    if (leg) {
+      var step = Math.floor(progress * 12) % 2;
+      leg.style.transform = step === 0 ? 'scaleX(1)' : 'scaleX(-1)';
+    }
+  }
+
+  /* Card accordion — open card i, close all others */
+  var activeCard = 0;
+  function openCard(i) {
+    if (i === activeCard) return;
+    cards[activeCard].classList.remove('active');
+    activeCard = i;
+    cards[activeCard].classList.add('active');
+  }
+
+  /* Each card occupies exactly 1/6 of scroll progress.
+     Card 0: p=0.00–0.167, Card 1: p=0.167–0.333, etc. */
+  function updateCards(p) {
+    var idx = Math.min(Math.floor(p * 6), 5);
+    openCard(idx);
+  }
+
+  /* Figure maps to same 6 segments — one rung per card */
+  /* rungSvgY has 7 values: start + 6 rungs */
+
+  /* Fade hint out after first scroll */
+  var hintFaded = false;
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger   : stickyEl,
+      pin       : true,
+      pinSpacing: true,
+      start     : 'top top',
+      end       : '+=500%',
+      scrub     : 1.8,
+      onUpdate  : function (self) {
+        var p = self.progress;
+        setFigure(p);
+        updateCards(p);
+        if (!hintFaded && p > 0.05 && hint) {
+          hint.style.opacity = '0';
+          hint.style.transition = 'opacity 0.4s';
+          hintFaded = true;
+        }
+      }
+    }
+  });
+
+  /* Init positions */
+  setFigure(0);
+});
+
+/* ─── SMOOTH NAV ─────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href^="#"]').forEach(function (l) {
+    l.addEventListener('click', function (e) {
+      e.preventDefault();
+      var t = document.querySelector(l.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+});
+
+/* ─── FADE-UP ────────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.style.opacity   = '1';
+        en.target.style.transform = 'translateY(0)';
+      }
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.exp-item, .skill-card, .work-card, .cert-card').forEach(el => {
-    el.style.opacity = '0';
-    obs.observe(el);
+  document.querySelectorAll('.skill-card,.cert-card').forEach(function (el) {
+    el.style.opacity   = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    io.observe(el);
   });
+});
 </script>
 </body>
 </html>
