@@ -625,12 +625,12 @@
   <div class="hero-content">
     <div class="hero-greeting"><span class="wave">👋</span> Hey there, I'm Suman</div>
     <h1>I'm a <span class="name-highlight">Product</span><span class="role-line">&amp; Growth Marketer</span></h1>
-    <div class="hero-available">Open to new opportunities · Bengaluru, India</div>
-    <p class="hero-sub">3+ years building B2B SaaS pipelines from scratch — paid acquisition, lifecycle automation, competitive positioning, and SEO systems that actually move numbers.</p>
+    <div class="hero-available">Open to Product Marketing &amp; Growth · Bengaluru, India</div>
+    <p class="hero-sub">I started in content, moved into growth, and eventually found my way into product marketing — working across positioning, GTM, acquisition, lifecycle, SEO, and sales enablement. 3+ years in B2B SaaS, building marketing systems that connect products to customers and growth.</p>
     <div class="hero-tags">
-      <span class="tag">GTM Strategy</span><span class="tag">Paid Acquisition</span><span class="tag">Lifecycle Email</span>
-      <span class="tag">SEO</span><span class="tag">Competitive Intel</span><span class="tag">Sales Enablement</span>
-      <span class="tag">PostHog</span><span class="tag">Meta &amp; Google Ads</span>
+      <span class="tag">GTM Strategy</span><span class="tag">Product Marketing</span><span class="tag">Growth</span>
+      <span class="tag">Lifecycle</span><span class="tag">SEO</span><span class="tag">Paid Acquisition</span>
+      <span class="tag">Sales Enablement</span>
     </div>
     <div class="hero-cta">
       <a class="btn btn-primary" href="mailto:sumanin031@gmail.com">Get in touch ✉️</a>
@@ -683,7 +683,359 @@
   </div>
 </div>
 
-<!-- ========== JOURNEY / EXPERIENCE ========== -->
+
+<!-- HOW I MOVE — Gear animation section -->
+<section id="how-i-move" style="background:#fafaf8;padding:5rem 2rem;overflow:hidden;position:relative;">
+
+<style>
+#how-i-move { border-top: 2.5px solid #111; border-bottom: 2.5px solid #111; }
+
+.him-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+@media(max-width:700px){
+  .him-inner { grid-template-columns: 1fr; }
+  #gear-canvas-wrap { height: 280px; }
+}
+
+.him-text .section-label { color: #999; }
+.him-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem,5vw,4.5rem);
+  color: #111;
+  line-height: 1;
+  margin: 0.35rem 0 1rem;
+}
+.him-text h2 span { color: #F5C842; -webkit-text-stroke: 1px #111; }
+
+.him-gear-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+.him-gear-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.him-gear-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: #F5C842;
+  border: 2px solid #111;
+  box-shadow: 2px 2px 0 #111;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.him-gear-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: #111;
+  line-height: 1.1;
+}
+.him-gear-sub {
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 0.1rem;
+}
+
+/* SVG gear wrap */
+#gear-canvas-wrap {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear-svg {
+  overflow: visible;
+}
+
+/* Gear spin animations — will be toggled by scroll */
+@keyframes gearCW  { to { transform: rotate(360deg);  } }
+@keyframes gearCCW { to { transform: rotate(-360deg); } }
+
+
+
+/* Pause when out of view — controlled via JS */
+.gear-paused { animation-play-state: paused !important; }
+
+/* Doodle figure */
+#doodle-runner {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  transition: transform 0.1s linear;
+  z-index: 10;
+}
+
+/* Arrow annotation */
+.him-arrow-wrap {
+  position: absolute;
+  top: 28px; left: 60px;
+  pointer-events: none;
+}
+</style>
+
+  <div class="him-inner">
+
+    <!-- LEFT: text -->
+    <div class="him-text">
+      <div class="section-label">The Engine</div>
+      <h2>How I<br><span>Move</span></h2>
+      <div class="him-gear-row">
+        <div class="him-gear-item">
+          <div class="him-gear-dot" style="background:#F5C842;"></div>
+          <div>
+            <div class="him-gear-label">Content sets everything in motion</div>
+            <div class="him-gear-sub">Content is the big gear. Every landing page, blog cluster, video script, and brief I write creates the surface area that growth and product work off. Without it, the other two gears have nothing to turn.</div>
+          </div>
+        </div>
+        <div class="him-gear-item">
+          <div class="him-gear-dot"></div>
+          <div>
+            <div class="him-gear-label">Content flows into Growth</div>
+            <div class="him-gear-sub">SEO content drives organic signups. Landing pages feed paid campaigns. Lifecycle emails are content too — they determine whether someone activates or drops off. Content IS the growth channel.</div>
+          </div>
+        </div>
+        <div class="him-gear-item">
+          <div class="him-gear-dot"></div>
+          <div>
+            <div class="him-gear-label">Content powers Product</div>
+            <div class="him-gear-sub">Positioning, messaging, battle cards, launch pages — all content. The clarity I built writing about products for 2 years is exactly what made me effective at product marketing.</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;font-size:0.8rem;color:#999;line-height:1.6;max-width:360px;">Turn the big gear and the rest follow. That's how I'm built.</p>
+    </div>
+
+    <!-- RIGHT: animated gears + doodle runner -->
+    <div id="gear-canvas-wrap">
+
+      <!-- "→ Me →" annotation -->
+      <div class="him-arrow-wrap">
+        <svg width="130" height="48" viewBox="0 0 130 48" fill="none">
+          <path d="M4 36 L18 36" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 32 L20 36 L14 40" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="24" y="41" font-family="Caveat, cursive" font-size="20" fill="#111">Me</text>
+          <path d="M58 36 L75 36" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+          <path d="M71 32 L77 36 L71 40" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Doodle runner — static above Content gear, only legs move -->
+      <div id="doodle-runner">
+        <svg width="58" height="74" viewBox="0 0 58 74" fill="none">
+          <style>
+            @keyframes legL {
+              0%,100% { d: path("M29 44 Q22 54 14 60"); }
+              50%      { d: path("M29 44 Q24 56 32 62"); }
+            }
+            @keyframes legR {
+              0%,100% { d: path("M29 44 Q36 54 44 60"); }
+              50%      { d: path("M29 44 Q22 54 14 60"); }
+            }
+            @keyframes footL {
+              0%,100% { x1:14; y1:60; x2:6;  y2:58; }
+              50%      { x1:32; y1:62; x2:40; y2:60; }
+            }
+            @keyframes footR {
+              0%,100% { x1:44; y1:60; x2:52; y2:58; }
+              50%      { x1:14; y1:60; x2:6;  y2:58; }
+            }
+            #leg-l { animation: legL 0.55s ease-in-out infinite; }
+            #leg-r { animation: legR 0.55s ease-in-out infinite 0.275s; }
+            #foot-l { animation: footL 0.55s ease-in-out infinite; }
+            #foot-r { animation: footR 0.55s ease-in-out infinite 0.275s; }
+          </style>
+          <!-- head -->
+          <circle cx="29" cy="9" r="8" fill="#fafaf8" stroke="#111" stroke-width="2.5"/>
+          <!-- angry brows -->
+          <line x1="23" y1="6" x2="26" y2="8" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="30" y1="8" x2="33" y2="6" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- eyes -->
+          <circle cx="25" cy="10" r="1.2" fill="#111"/>
+          <circle cx="31" cy="10" r="1.2" fill="#111"/>
+          <!-- straight determined mouth -->
+          <line x1="24" y1="14" x2="32" y2="14" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- body -->
+          <line x1="29" y1="17" x2="29" y2="44" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- arms — static, hands on hips / pushing down -->
+          <path d="M29 26 Q20 30 14 26" stroke="#111" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M29 26 Q38 30 44 26" stroke="#111" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- ANIMATED legs -->
+          <path id="leg-l" d="M29 44 Q22 54 14 60" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path id="leg-r" d="M29 44 Q36 54 44 60" stroke="#111" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <!-- feet — animate too -->
+          <line id="foot-l" x1="14" y1="60" x2="6"  y2="58" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+          <line id="foot-r" x1="44" y1="60" x2="52" y2="58" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!--
+        GEAR LAYOUT — viewBox 620 480
+        Big   (Content):  cx=175, cy=295, body r=108, tooth outer ~142, 12 teeth
+        Mid   (Growth):   cx=370, cy=175, body r=75,  tooth outer ~102, 10 teeth
+        Small (Product):  cx=500, cy=308, body r=52,  tooth outer ~72,  8 teeth
+
+        Mesh distances:
+          Big↔Mid:   dist(175,295→370,175) ≈ 215 ≈ 108+75+gap ✓
+          Mid↔Small: dist(370,175→500,308) ≈ 191 ≈ 75+52+gap+teeth ✓
+      -->
+      <svg id="gears-svg" viewBox="0 0 620 480" width="100%" height="100%" overflow="visible" style="display:block;">
+        <defs>
+          <!-- Big tooth: body r=108, tip at r=142 -->
+          <rect id="tb" x="-13" y="-142" width="26" height="36" rx="4" ry="4"/>
+          <!-- Mid tooth: body r=75, tip at r=102 -->
+          <rect id="tm" x="-10" y="-102" width="20" height="29" rx="3" ry="3"/>
+          <!-- Small tooth: body r=52, tip at r=72 -->
+          <rect id="ts" x="-7"  y="-72"  width="14" height="22" rx="2" ry="2"/>
+        </defs>
+
+        <!-- ═══ BIG GEAR — Content — YELLOW ═══ -->
+        <g id="g-big" style="transform-origin:175px 295px;animation:gearCW 9s linear infinite">
+          <g transform="translate(175,295)">
+            <circle r="108" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(0)"   fill="#F5C842"/>
+            <use href="#tb" transform="rotate(30)"  fill="#F5C842"/>
+            <use href="#tb" transform="rotate(60)"  fill="#F5C842"/>
+            <use href="#tb" transform="rotate(90)"  fill="#F5C842"/>
+            <use href="#tb" transform="rotate(120)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(150)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(180)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(210)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(240)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(270)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(300)" fill="#F5C842"/>
+            <use href="#tb" transform="rotate(330)" fill="#F5C842"/>
+            <!-- black border ring -->
+            <circle r="108" fill="none" stroke="#111" stroke-width="3"/>
+            <!-- hole -->
+            <circle r="65"  fill="#fafaf8"/>
+            <!-- hub dot -->
+            <circle r="22"  fill="#111"/>
+          </g>
+        </g>
+
+        <!-- ═══ MID GEAR — Growth — BLACK ═══ -->
+        <g id="g-mid" style="transform-origin:370px 175px;animation:gearCCW 6s linear infinite">
+          <g transform="translate(370,175)">
+            <circle r="75" fill="#111"/>
+            <use href="#tm" transform="rotate(0)"   fill="#111"/>
+            <use href="#tm" transform="rotate(36)"  fill="#111"/>
+            <use href="#tm" transform="rotate(72)"  fill="#111"/>
+            <use href="#tm" transform="rotate(108)" fill="#111"/>
+            <use href="#tm" transform="rotate(144)" fill="#111"/>
+            <use href="#tm" transform="rotate(180)" fill="#111"/>
+            <use href="#tm" transform="rotate(216)" fill="#111"/>
+            <use href="#tm" transform="rotate(252)" fill="#111"/>
+            <use href="#tm" transform="rotate(288)" fill="#111"/>
+            <use href="#tm" transform="rotate(324)" fill="#111"/>
+            <circle r="45"  fill="#fafaf8"/>
+            <circle r="16"  fill="#F5C842"/>
+          </g>
+        </g>
+
+        <!-- ═══ SMALL GEAR — Product — BLACK ═══ -->
+        <g id="g-small" style="transform-origin:500px 308px;animation:gearCW 3.9s linear infinite">
+          <g transform="translate(500,308)">
+            <circle r="52" fill="#111"/>
+            <use href="#ts" transform="rotate(0)"   fill="#111"/>
+            <use href="#ts" transform="rotate(45)"  fill="#111"/>
+            <use href="#ts" transform="rotate(90)"  fill="#111"/>
+            <use href="#ts" transform="rotate(135)" fill="#111"/>
+            <use href="#ts" transform="rotate(180)" fill="#111"/>
+            <use href="#ts" transform="rotate(225)" fill="#111"/>
+            <use href="#ts" transform="rotate(270)" fill="#111"/>
+            <use href="#ts" transform="rotate(315)" fill="#111"/>
+            <circle r="31"  fill="#fafaf8"/>
+            <circle r="12"  fill="#F5C842"/>
+          </g>
+        </g>
+
+        <!--
+          LABEL ARROWS — drawn outside the gears, Caveat handwritten font
+          Each arrow: curved dashed line + arrowhead + label text
+        -->
+
+        <!-- Content label — top-left of big gear -->
+        <g font-family="Caveat, cursive" fill="#111">
+          <path d="M60,180 Q90,200 148,250" stroke="#111" stroke-width="1.8"
+                stroke-dasharray="5 3" stroke-linecap="round" fill="none"/>
+          <path d="M143,244 L150,252 L142,256" fill="none" stroke="#111"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="10" y="172" font-size="18" font-weight="bold">Content</text>
+        </g>
+
+        <!-- Growth label — top-right of mid gear -->
+        <g font-family="Caveat, cursive" fill="#111">
+          <path d="M500,60 Q460,90 390,112" stroke="#111" stroke-width="1.8"
+                stroke-dasharray="5 3" stroke-linecap="round" fill="none"/>
+          <path d="M394,107 L388,114 L396,118" fill="none" stroke="#111"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="488" y="55" font-size="18" font-weight="bold">Growth</text>
+        </g>
+
+        <!-- Product label — right of small gear -->
+        <g font-family="Caveat, cursive" fill="#111">
+          <path d="M590,308 Q560,308 554,308" stroke="#111" stroke-width="1.8"
+                stroke-dasharray="5 3" stroke-linecap="round" fill="none"/>
+          <path d="M558,303 L552,308 L558,313" fill="none" stroke="#111"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="568" y="313" font-size="18" font-weight="bold">Product</text>
+        </g>
+
+      </svg>
+    </div><!-- end gear-canvas-wrap -->
+
+  </div><!-- end him-inner -->
+</section>
+
+<script>
+/* ── GEAR RUNNER SCROLL ANIMATION ─── */
+(function() {
+  var section = document.getElementById('how-i-move');
+  var runner  = document.getElementById('doodle-runner');
+  var wrap    = document.getElementById('gear-canvas-wrap');
+  if (!section || !runner) return;
+
+  // Place runner statically on top of Content gear (big gear cx=175, cy=295, r=108+36tooth=153 tip)
+  // In viewBox 620x480 → pixel coords via wrap size
+  function placeRunner() {
+    var r  = wrap.getBoundingClientRect();
+    var px = (175 / 620) * r.width  - 27; /* center on gear, offset half runner width */
+    var py = (141 / 480) * r.height - 34; /* top of gear teeth (295-154) minus runner height */
+    runner.style.transform = 'translate(' + Math.round(px) + 'px,' + Math.round(py) + 'px)';
+  }
+
+  function onScroll() {
+    /* Gear pause/play based on visibility */
+    var r = section.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var inView = r.top < vh && r.bottom > 0;
+    ['g-big','g-mid','g-small'].forEach(function(id){
+      var g = document.getElementById(id);
+      if (!g) return;
+      g.style.animationPlayState = inView ? 'running' : 'paused';
+    });
+  }
+
+  placeRunner();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', placeRunner);
+  onScroll();
+})();
+</script>
+
 <section id="experience">
   <div class="journey-bg-dots"></div>
 
@@ -874,7 +1226,7 @@
       padding: 0 1.1rem;
     }
     .lad-card.active .lad-card-body {
-      max-height: 300px;
+      max-height: 380px;
       padding: 0 1.1rem 1rem;
     }
 
@@ -900,6 +1252,34 @@
       color: #111;
       border: 1px solid rgba(0,0,0,0.12);
       font-weight: 600;
+    }
+
+
+    /* ── CTA button inside card ── */
+    .lad-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.85rem;
+      padding: 0.45rem 0.9rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: #111;
+      background: #F5C842;
+      border: 2px solid #111;
+      border-radius: 4px;
+      box-shadow: 3px 3px 0 #111;
+      cursor: pointer;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+      text-decoration: none;
+    }
+    .lad-card-cta:hover {
+      box-shadow: 1px 1px 0 #111;
+      transform: translate(2px, 2px);
+    }
+    .lad-card-cta svg {
+      width: 13px; height: 13px; flex-shrink: 0;
     }
 
     /* ── LADDER COLUMN — right side ── */
@@ -929,7 +1309,7 @@
       transform: translateX(-50%);
       top: 0;
       will-change: top;
-      transition: top 0.4s cubic-bezier(0.4,0,0.2,1);
+      transition: top 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
       pointer-events: none;
     }
 
@@ -960,12 +1340,16 @@
             <span class="lad-card-title">Product Marketing and GTM</span>
           </div>
           <div class="lad-card-body">
-            <p class="lad-card-desc">Owned end-to-end GTM strategy for Swivl across 5 trade verticals. Translated AI product capabilities into pain-point messaging, built ICP frameworks from PostHog cohorts, created competitive battle cards, and planned full feature launch cycles — solution pages, social posts, creative campaigns.</p>
+            <p class="lad-card-desc">I work across the full path from product → positioning → market → revenue. I've translated product capabilities into customer-focused messaging, developed ICP frameworks using product behaviour data, built competitive battlecards, planned feature launches, and worked with sales to turn product value into usable narratives.</p>
             <div class="lad-card-tags">
               <span class="lad-card-tag">GTM Strategy</span><span class="lad-card-tag">ICP Development</span>
               <span class="lad-card-tag">Competitive Intel</span><span class="lad-card-tag">Feature Launches</span>
               <span class="lad-card-tag">Sales Enablement</span>
             </div>
+            <button class="lad-card-cta" onclick="openCaseStudy('cs-0')" type="button">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+              View Case Study
+            </button>
           </div>
         </div>
 
@@ -976,12 +1360,16 @@
             <span class="lad-card-title">Paid Acquisition</span>
           </div>
           <div class="lad-card-body">
-            <p class="lad-card-desc">Managed $800/day across Meta and Google. Led an 8-month attribution audit uncovering that 99.6% of signups lacked UTM data. Rebuilt campaign architecture, eliminated auction overlap, and built PostHog-linked dashboards to measure activation quality — not just clicks.</p>
+            <p class="lad-card-desc">I work on paid acquisition from campaign strategy to conversion. I've planned Meta and Google campaigns around product launches, acquisition and retargeting — working across audiences, messaging, creatives, landing pages, UTMs, and performance analysis.</p>
             <div class="lad-card-tags">
               <span class="lad-card-tag">Meta Ads</span><span class="lad-card-tag">Google Ads</span>
               <span class="lad-card-tag">UTM Attribution</span><span class="lad-card-tag">CBO Architecture</span>
               <span class="lad-card-tag">Budget Optimisation</span>
             </div>
+            <button class="lad-card-cta" onclick="openCaseStudy('cs-1')" type="button">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+              View Case Study
+            </button>
           </div>
         </div>
 
@@ -992,12 +1380,16 @@
             <span class="lad-card-title">Lifecycle and Automation</span>
           </div>
           <div class="lad-card-body">
-            <p class="lad-card-desc">Built Swivl's complete lifecycle email system in PostHog from zero — 4 goal-specific onboarding journeys, SMS/email framework across 8 behavior patterns, UTM convention across all CTAs. Recovered 247 at-risk users by diagnosing and fixing broken orchestration workflows.</p>
+            <p class="lad-card-desc">I build lifecycle systems around what users actually do, not just when they signed up. I've worked on behaviour-triggered onboarding, activation journeys, lifecycle emails, product milestones, segmentation, and re-engagement workflows using product data and PostHog.</p>
             <div class="lad-card-tags">
               <span class="lad-card-tag">PostHog Workflows</span><span class="lad-card-tag">Onboarding Flows</span>
               <span class="lad-card-tag">Behavioral Triggers</span><span class="lad-card-tag">SMS Marketing</span>
               <span class="lad-card-tag">UTM Tracking</span>
             </div>
+            <button class="lad-card-cta" onclick="openCaseStudy('cs-2')" type="button">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+              View Case Study
+            </button>
           </div>
         </div>
 
@@ -1008,12 +1400,16 @@
             <span class="lad-card-title">SEO and Organic Growth</span>
           </div>
           <div class="lad-card-body">
-            <p class="lad-card-desc">Architected a 151-topic SEO cluster across 9 clusters and 5 trade industries. Rewrote 132 blog posts, audited 190 published posts via GSC, built a 711-record backlink directory using DataForSEO. Fixed redirect loops, JS rendering failures, and duplicate meta title issues.</p>
+            <p class="lad-card-desc">I build SEO systems rather than publishing content one keyword at a time. I architected a 151-topic SEO cluster across nine clusters and five trade industries, rewrote 132 blog posts, audited 190 published pages through GSC, and worked on technical and programmatic SEO opportunities.</p>
             <div class="lad-card-tags">
               <span class="lad-card-tag">Programmatic SEO</span><span class="lad-card-tag">Technical SEO</span>
               <span class="lad-card-tag">GSC Tracking</span><span class="lad-card-tag">Keyword Clustering</span>
               <span class="lad-card-tag">Link Building</span>
             </div>
+            <button class="lad-card-cta" onclick="openCaseStudy('cs-3')" type="button">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+              View Case Study
+            </button>
           </div>
         </div>
 
@@ -1024,27 +1420,35 @@
             <span class="lad-card-title">Social and Content Ops</span>
           </div>
           <div class="lad-card-body">
-            <p class="lad-card-desc">Managed organic social across Meta (Instagram, Facebook) and LinkedIn. Built and owned the content calendar, briefed designers with detailed asset specs, coordinated cross-team publishing, and maintained brand voice consistency across every channel and format.</p>
+            <p class="lad-card-desc">I turn product stories into content people can actually understand. I've built content calendars, campaign briefs, social strategies, product education content, landing pages, video concepts, and distribution systems — connecting content back to broader GTM goals.</p>
             <div class="lad-card-tags">
               <span class="lad-card-tag">Content Calendar</span><span class="lad-card-tag">Meta and LinkedIn</span>
               <span class="lad-card-tag">Creative Direction</span><span class="lad-card-tag">Brand Voice</span>
             </div>
+            <button class="lad-card-cta" onclick="openCaseStudy('cs-4')" type="button">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+              View Case Study
+            </button>
           </div>
         </div>
 
         <div class="lad-card" id="lcard-5">
           <div class="lad-card-header">
             <span class="lad-card-num">06</span>
-            <span class="lad-card-icon">🧭</span>
-            <span class="lad-card-title">Team and Project Leadership</span>
+            <span class="lad-card-icon">🤝</span>
+            <span class="lad-card-title">Cross-Functional Execution</span>
           </div>
           <div class="lad-card-body">
-            <p class="lad-card-desc">Led a cross-functional team of 5 (PPC, web dev, SEO, 2 designers). Set sprint priorities, defined workflows, managed tasks in Linear, removed blockers, and gave creative direction — writing detailed design briefs for every campaign and feature launch.</p>
+            <p class="lad-card-desc">Good marketing rarely happens inside one function. I've worked closely with product, sales, design, development, and performance marketing teams to take campaigns and launches from idea to execution.</p>
             <div class="lad-card-tags">
               <span class="lad-card-tag">Cross-functional Teams</span><span class="lad-card-tag">Workflow Management</span>
               <span class="lad-card-tag">Task Prioritisation</span><span class="lad-card-tag">Linear</span>
               <span class="lad-card-tag">Sprint Planning</span>
             </div>
+            <button class="lad-card-cta" onclick="openCaseStudy('cs-5')" type="button">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+              View Case Study
+            </button>
           </div>
         </div>
 
@@ -1114,206 +1518,687 @@
   <div class="section-inner">
     <div class="section-label">Toolkit</div>
     <h2 class="section-title">Tools I work with</h2>
-    <p class="section-sub">Hover each tool to see what I've actually done with it.</p>
+    <p class="section-sub">The tools matter less than what I use them to build. Hover to see how I've used each one.</p>
 
     <div class="tool-diamond-wrap">
 
-      <!-- Row 1: 2 tiles -->
+      <!-- Row 1: 2 tiles — GA4, GSC -->
       <div class="tool-row">
         <div class="tool-tile tip-down">
           <div class="tool-logo">
-            <!-- GA4 -->
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="48" height="48" rx="10" fill="#fff"/>
-              <rect x="8" y="28" width="8" height="14" rx="2" fill="#F9AB00"/>
-              <rect x="20" y="18" width="8" height="24" rx="2" fill="#E37400"/>
-              <rect x="32" y="8" width="8" height="34" rx="2" fill="#F9AB00"/>
+            <!-- GA4 — Google Analytics official bar chart look -->
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="28" width="9" height="14" rx="2" fill="#F9AB00"/>
+              <rect x="19" y="18" width="9" height="24" rx="2" fill="#E37400"/>
+              <rect x="32" y="8" width="9" height="34" rx="2" fill="#F9AB00"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>GA4</strong>Tracked campaign traffic, set up conversion events, built funnel reports, and monitored organic vs paid channel performance.</div>
+          <div class="tool-tooltip"><strong>GA4</strong>Used for behavioral analysis, tracking traffic by channel, monitoring campaign performance, and understanding how organic and paid efforts contribute to conversions.</div>
         </div>
         <div class="tool-tile tip-down">
           <div class="tool-logo">
-            <!-- GSC -->
+            <!-- Google Search Console — magnifier + G colours -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" stroke="#4285F4" stroke-width="4"/>
-              <circle cx="24" cy="24" r="9" stroke="#34A853" stroke-width="4"/>
-              <circle cx="24" cy="24" r="3" fill="#EA4335"/>
-              <line x1="24" y1="6" x2="24" y2="15" stroke="#FBBC05" stroke-width="3"/>
-              <line x1="24" y1="33" x2="24" y2="42" stroke="#FBBC05" stroke-width="3"/>
-              <line x1="6" y1="24" x2="15" y2="24" stroke="#FBBC05" stroke-width="3"/>
-              <line x1="33" y1="24" x2="42" y2="24" stroke="#FBBC05" stroke-width="3"/>
+              <circle cx="21" cy="20" r="11" stroke="#4285F4" stroke-width="3.5"/>
+              <line x1="29" y1="29" x2="41" y2="41" stroke="#34A853" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M21 14 Q27 14 27 20 Q27 26 21 26" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="17" cy="20" r="2" fill="#FBBC05"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Google Search Console</strong>Monitored CTR and impressions, fixed index coverage gaps, tracked keyword position trends, and prioritised content fixes.</div>
+          <div class="tool-tooltip"><strong>Google Search Console</strong>Used for organic performance analysis, indexing issues, keyword tracking, and technical SEO audits — core to my SEO workflow.</div>
         </div>
       </div>
 
-      <!-- Row 2: 3 tiles -->
+      <!-- Row 2: 3 tiles — HubSpot, PostHog, Ahrefs -->
       <div class="tool-row">
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- HubSpot -->
+            <!-- HubSpot — sprocket + circle official mark -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="14" r="6" fill="#FF7A59"/>
-              <circle cx="32" cy="14" r="3" fill="#fff"/>
-              <path d="M32 20v8M24 28H16a6 6 0 0 0 0 12h0a6 6 0 0 0 6-6v-6" stroke="#FF7A59" stroke-width="3" stroke-linecap="round"/>
-              <path d="M32 28v6a6 6 0 0 0 6 6h0a6 6 0 0 0 0-12h-6z" stroke="#FF7A59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="33" cy="13" r="7" fill="#FF7A59"/>
+              <circle cx="33" cy="13" r="3.5" fill="#fff"/>
+              <line x1="33" y1="20" x2="33" y2="27" stroke="#FF7A59" stroke-width="3" stroke-linecap="round"/>
+              <path d="M33 27 L22 27 A7 7 0 1 0 22 41 A7 7 0 0 0 29 34 L29 27" stroke="#FF7A59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M33 27 L40 27 A7 7 0 1 1 40 41 A7 7 0 0 1 33 34 L33 27" stroke="#FF7A59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>HubSpot</strong>Held Content Marketing certification; used for email sequences, lead nurturing flows, and CRM-aligned content strategy.</div>
+          <div class="tool-tooltip"><strong>HubSpot</strong>Used for email sequences, lead nurturing flows, and CRM-aligned content strategy. Also hold the HubSpot Content Marketing certification.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- PostHog -->
+            <!-- PostHog — hedgehog silhouette -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 40 L24 8 L40 40 Z" fill="#F54E00" opacity="0.9"/>
-              <path d="M16 40 L24 24 L32 40 Z" fill="#fff" opacity="0.85"/>
-              <circle cx="24" cy="36" r="3" fill="#F54E00"/>
+              <!-- body -->
+              <ellipse cx="24" cy="30" rx="15" ry="10" fill="#F54E00"/>
+              <!-- spines -->
+              <line x1="14" y1="22" x2="10" y2="12" stroke="#F54E00" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="18" y1="20" x2="16" y2="10" stroke="#F54E00" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="24" y1="19" x2="24" y2="9"  stroke="#F54E00" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="30" y1="20" x2="32" y2="10" stroke="#F54E00" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="34" y1="22" x2="38" y2="12" stroke="#F54E00" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- face -->
+              <circle cx="30" cy="30" r="7" fill="#fff"/>
+              <circle cx="32" cy="28" r="1.5" fill="#111"/>
+              <ellipse cx="34" cy="31" rx="2" ry="1.2" fill="#F54E00"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>PostHog</strong>Built complete lifecycle email workflows, ran cohort analysis, created quality scoring models, and tracked funnel drop-offs and activation metrics.</div>
+          <div class="tool-tooltip"><strong>PostHog</strong>Used for behavioral analysis, activation tracking, lifecycle segmentation, UTM attribution, and understanding how users move through the product.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Ahrefs -->
+            <!-- Ahrefs — official "a" wordmark style -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 38 L22 10 L34 38" stroke="#FF8C00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <path d="M15 28 L29 28" stroke="#FF8C00" stroke-width="5" stroke-linecap="round"/>
+              <path d="M8 38 L20 10 L32 38" stroke="#FF8C00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 28 L27 28" stroke="#FF8C00" stroke-width="4.5" stroke-linecap="round"/>
+              <circle cx="38" cy="32" r="7" fill="#FF8C00"/>
+              <circle cx="38" cy="32" r="3.5" fill="#fff"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Ahrefs</strong>Conducted keyword research, built 711-record backlink directories, tracked domain authority, and identified content gap opportunities across 5 verticals.</div>
+          <div class="tool-tooltip"><strong>Ahrefs</strong>Used for keyword research, competitor analysis, content gap analysis, and SEO planning across trade verticals.</div>
         </div>
       </div>
 
-      <!-- Row 3: 4 tiles (widest) -->
+      <!-- Row 3: 4 tiles — Screaming Frog, Figma, Notion, Linear -->
       <div class="tool-row">
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Screaming Frog -->
+            <!-- Screaming Frog — green frog face -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="24" cy="30" rx="12" ry="10" fill="#7DC000"/>
-              <circle cx="18" cy="22" r="5" fill="#7DC000"/>
-              <circle cx="30" cy="22" r="5" fill="#7DC000"/>
-              <circle cx="18" cy="21" r="2.5" fill="#fff"/>
-              <circle cx="30" cy="21" r="2.5" fill="#fff"/>
-              <circle cx="18" cy="21" r="1.2" fill="#333"/>
-              <circle cx="30" cy="21" r="1.2" fill="#333"/>
-              <path d="M20 33 Q24 36 28 33" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-              <line x1="14" y1="18" x2="10" y2="13" stroke="#7DC000" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="34" y1="18" x2="38" y2="13" stroke="#7DC000" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="24" cy="32" rx="13" ry="9" fill="#6DB33F"/>
+              <circle cx="17" cy="23" r="6" fill="#6DB33F"/>
+              <circle cx="31" cy="23" r="6" fill="#6DB33F"/>
+              <circle cx="17" cy="22" r="3" fill="#fff"/>
+              <circle cx="31" cy="22" r="3" fill="#fff"/>
+              <circle cx="17.8" cy="22" r="1.5" fill="#1a1a1a"/>
+              <circle cx="31.8" cy="22" r="1.5" fill="#1a1a1a"/>
+              <path d="M19 35 Q24 38 29 35" stroke="#fff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <line x1="12" y1="18" x2="8"  y2="12" stroke="#6DB33F" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="36" y1="18" x2="40" y2="12" stroke="#6DB33F" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="10" y1="12" x2="14" y2="12" stroke="#6DB33F" stroke-width="2" stroke-linecap="round"/>
+              <line x1="38" y1="12" x2="42" y2="12" stroke="#6DB33F" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Screaming Frog</strong>Crawled Swivl's site to identify redirect loops, broken links, duplicate meta tags, and JavaScript rendering issues blocking indexation.</div>
+          <div class="tool-tooltip"><strong>Screaming Frog</strong>Used for site crawls, identifying indexing issues, redirect loops, broken links, and technical SEO problems blocking organic performance.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Figma -->
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="14" y="8" width="10" height="10" rx="5" fill="#F24E1E"/>
-              <rect x="24" y="8" width="10" height="10" rx="5" fill="#FF7262"/>
-              <rect x="14" y="18" width="10" height="10" rx="0" fill="#A259FF"/>
-              <rect x="14" y="28" width="10" height="10" rx="5" fill="#1ABCFE"/>
-              <circle cx="29" cy="23" r="5" fill="#0ACF83"/>
+            <!-- Figma — exact Figma component shapes -->
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <!-- top-left: red -->
+              <path d="M14 8 H24 Q29 8 29 13 Q29 18 24 18 H14 V8 Z" fill="#F24E1E"/>
+              <!-- bottom-left: green -->
+              <path d="M14 18 H24 Q29 18 29 23 Q29 28 24 28 H14 V18 Z" fill="#0ACF83"/>
+              <!-- top-right: orange -->
+              <path d="M24 8 H34 Q39 8 39 13 Q39 18 34 18 H24 V8 Z" fill="#FF7262"/>
+              <!-- bottom-bottom-left: blue -->
+              <path d="M14 28 H24 Q29 28 29 33 Q29 38 24 38 H19 Q14 38 14 33 V28 Z" fill="#1ABCFE"/>
+              <!-- right circle: purple -->
+              <circle cx="34" cy="23" r="5" fill="#A259FF"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Figma</strong>Audited 15+ pages of Swivl's ad creative library, wrote creative briefs for designers, and reviewed landing page mockups for copy-design alignment.</div>
+          <div class="tool-tooltip"><strong>Figma</strong>Used to collaborate with designers on landing pages, campaign creatives, product marketing assets, and website experiences.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Notion -->
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="8" width="28" height="32" rx="4" fill="#fff" stroke="#1a1a1a" stroke-width="2.5"/>
-              <path d="M16 16h16M16 22h12M16 28h10" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M10 12 L10 8 L14 8" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+            <!-- Notion — bold N mark -->
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="6" width="32" height="36" rx="5" fill="#fff" stroke="#1a1a1a" stroke-width="2"/>
+              <!-- Notion "N" diagonal -->
+              <path d="M15 14 L15 34 L20 34 L33 18 L33 34 L28 34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <line x1="15" y1="14" x2="33" y2="14" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Notion</strong>Used for content planning, editorial calendars, campaign briefs, and maintaining team knowledge bases and SOPs.</div>
+          <div class="tool-tooltip"><strong>Notion</strong>Used for content planning, campaign briefs, editorial calendars, documentation, and marketing workflows.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Linear -->
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 30 L18 8 L40 8 L40 40 L8 40 Z" fill="#5E6AD2" opacity="0.15" rx="4"/>
-              <path d="M12 36 L24 12 L38 12" stroke="#5E6AD2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <path d="M12 36 L38 36" stroke="#5E6AD2" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="38" cy="12" r="3" fill="#5E6AD2"/>
-              <circle cx="12" cy="36" r="3" fill="#5E6AD2"/>
+            <!-- Linear — exact triangle logo -->
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 36 L36 8 L40 40 Z" fill="#5E6AD2"/>
+              <path d="M8 36 L36 8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              <path d="M8 24 L24 8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Linear</strong>Managed weekly sprint tasks for the 5-person MARS team — assigned issues, set priorities, tracked milestones, and maintained campaign delivery timelines.</div>
+          <div class="tool-tooltip"><strong>Linear</strong>Used for sprint management, assigning tasks, tracking campaign delivery timelines, and coordinating cross-functional marketing work.</div>
         </div>
       </div>
 
-      <!-- Row 4: 3 tiles -->
+      <!-- Row 4: 3 tiles — Claude, ChatGPT, Canva -->
       <div class="tool-row">
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Claude -->
+            <!-- Claude — Anthropic coral mark -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" fill="#CC785C" opacity="0.15"/>
-              <path d="M16 32 Q14 24 20 18 Q24 14 28 18 Q32 22 30 28 Q28 34 22 34 Q18 34 16 32Z" fill="#CC785C"/>
-              <path d="M28 18 Q34 16 36 22 Q38 28 34 32" stroke="#CC785C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="24" cy="24" r="18" fill="#D97559" opacity="0.15"/>
+              <!-- Claude's distinctive diagonal lines mark -->
+              <rect x="14" y="20" width="20" height="3.5" rx="1.75" fill="#D97559" transform="rotate(-30 24 21.75)"/>
+              <rect x="14" y="26" width="20" height="3.5" rx="1.75" fill="#D97559" transform="rotate(-30 24 27.75)"/>
+              <rect x="14" y="32" width="14" height="3.5" rx="1.75" fill="#D97559" transform="rotate(-30 24 33.75)"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Claude (Anthropic)</strong>Used to build marketing infrastructure, write and optimise 130+ blog posts, design lifecycle systems, and run attribution audits at scale.</div>
+          <div class="tool-tooltip"><strong>Claude (Anthropic)</strong>Used to build marketing infrastructure, write and optimise blog posts, design lifecycle systems, run attribution audits, and accelerate research and strategy work.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- ChatGPT -->
+            <!-- ChatGPT — OpenAI logo -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" fill="#10A37F" opacity="0.12"/>
-              <path d="M24 12 C16 12 12 17 12 22 C12 26 14 29 18 31 L18 36 L23 32 C23.3 32 23.7 32 24 32 C32 32 36 27 36 22 C36 17 32 12 24 12Z" fill="#10A37F"/>
-              <circle cx="19" cy="22" r="1.8" fill="#fff"/>
-              <circle cx="24" cy="22" r="1.8" fill="#fff"/>
-              <circle cx="29" cy="22" r="1.8" fill="#fff"/>
+              <path d="M 24 8 C 15 8 10 14 10 20 C 10 23 11 26 14 28 C 12 30 12 33 13 35 C 15 32 17 31 20 31 C 21 33 23 34 24 34 C 33 34 38 28 38 22 C 38 14 33 8 24 8 Z" fill="#10A37F"/>
+              <path d="M 24 8 C 33 8 38 14 38 22 C 38 28 33 34 24 34 C 25 36 27 38 29 38 C 33 36 38 30 38 22 C 38 14 33 8 24 8 Z" fill="#10A37F" opacity="0.5"/>
+              <circle cx="18" cy="21" r="2" fill="#fff"/>
+              <circle cx="27" cy="21" r="2" fill="#fff"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>ChatGPT</strong>Used for rapid copy ideation, ad copy variants, competitive research prompts, and drafting first-pass frameworks for GTM strategies.</div>
+          <div class="tool-tooltip"><strong>ChatGPT</strong>Used for copy ideation, ad copy variants, competitive research, and drafting first-pass frameworks for GTM strategies.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Canva -->
+            <!-- Canva — official C mark -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" fill="#7D2AE7" opacity="0.12"/>
-              <path d="M18 30 Q14 24 18 18 Q22 13 28 16 Q34 19 32 26 Q30 32 24 33 Q20 33 18 30Z" fill="#7D2AE7" opacity="0.8"/>
-              <path d="M26 20 Q30 18 32 22" stroke="#00C4CC" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="24" cy="24" r="18" fill="#00C4CC" opacity="0.15"/>
+              <path d="M32 16 C30 12 26 10 22 11 C16 12 12 17 12 23 C12 30 17 36 24 36 C28 36 32 34 34 30" stroke="#7D2AE7" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <circle cx="34" cy="20" r="5" fill="#00C4CC"/>
+              <circle cx="34" cy="20" r="2.5" fill="#fff"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Canva</strong>Created social media graphics, ad creative templates, pitch deck visuals, and blog header images — briefed and reviewed designer output.</div>
+          <div class="tool-tooltip"><strong>Canva</strong>Used for social media graphics, ad creative templates, pitch deck visuals, and blog header images — always briefed alongside designer collaboration.</div>
         </div>
       </div>
 
-      <!-- Row 5: 2 tiles -->
+      <!-- Row 5: 2 tiles — Meta Ads, Google Ads -->
       <div class="tool-row">
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Meta Ads -->
+            <!-- Meta — infinity loop mark -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 28 C8 18 14 12 20 14 C23 15 24 20 24 24 C24 20 25 15 28 14 C34 12 40 18 40 28 C40 35 35 38 31 36 C28 34 26 28 24 24 C22 28 20 34 17 36 C13 38 8 35 8 28Z" fill="url(#metaGrad)"/>
-              <defs><linearGradient id="metaGrad" x1="8" y1="14" x2="40" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0081FB"/><stop offset="100%" stop-color="#0099FF"/></linearGradient></defs>
+              <path d="M8 26 C8 20 11 15 15 15 C18 15 20 18 24 24 C28 30 30 33 33 33 C37 33 40 29 40 24 C40 19 37 15 33 15 C30 15 28 18 26 21" stroke="url(#metaG2)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+              <path d="M40 22 C40 28 37 33 33 33 C30 33 28 30 24 24 C20 18 18 15 15 15 C11 15 8 19 8 24" stroke="url(#metaG2)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+              <defs>
+                <linearGradient id="metaG2" x1="8" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0081FB"/>
+                  <stop offset="100%" stop-color="#00B2FF"/>
+                </linearGradient>
+              </defs>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Meta Ads Manager</strong>Managed $800/day budget, restructured CBO campaigns, fixed pixel attribution, audited 8-month spend history, and built quality-score dashboards.</div>
+          <div class="tool-tooltip"><strong>Meta Ads Manager</strong>Used for campaign planning, acquisition, retargeting, audience segmentation, creative testing, and performance analysis across product launches.</div>
         </div>
         <div class="tool-tile">
           <div class="tool-logo">
-            <!-- Google Ads -->
+            <!-- Google Ads — official triangle mark -->
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 36 L20 18" stroke="#4285F4" stroke-width="5" stroke-linecap="round"/>
-              <path d="M20 18 L36 36" stroke="#FBBC05" stroke-width="5" stroke-linecap="round"/>
-              <circle cx="10" cy="36" r="5" fill="#34A853"/>
-              <circle cx="36" cy="36" r="5" fill="#EA4335"/>
-              <circle cx="20" cy="18" r="5" fill="#4285F4"/>
+              <path d="M12 38 L24 16" stroke="#4285F4" stroke-width="5.5" stroke-linecap="round"/>
+              <path d="M24 16 L36 38" stroke="#FBBC05" stroke-width="5.5" stroke-linecap="round"/>
+              <path d="M12 38 L36 38" stroke="#34A853" stroke-width="5.5" stroke-linecap="round"/>
+              <circle cx="36" cy="38" r="4" fill="#EA4335"/>
+              <circle cx="12" cy="38" r="4" fill="#4285F4"/>
+              <circle cx="24" cy="16" r="4" fill="#FBBC05"/>
             </svg>
           </div>
-          <div class="tool-tooltip"><strong>Google Ads</strong>Ran keyword campaigns, wrote ad copy, fixed UTM macro bugs causing attribution misfire, and cross-referenced performance with PostHog cohort data.</div>
+          <div class="tool-tooltip"><strong>Google Ads</strong>Used for search campaigns, keyword strategy, landing page planning, and conversion-focused copy across B2B product campaigns.</div>
         </div>
       </div>
 
     </div><!-- end diamond wrap -->
   </div>
 </section>
+
+<!-- MY WORK — Detective Board v2 -->
+<section id="my-work" style="background:#0c0c0c;padding:5rem 2rem 6rem;position:relative;overflow:hidden;">
+
+<style>
+/* ══ DETECTIVE BOARD v2 ══ */
+#my-work::before {
+  content:'';position:absolute;inset:0;
+  background: radial-gradient(ellipse 80% 60% at 30% 40%, rgba(245,200,66,0.05) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 50% at 80% 70%, rgba(245,200,66,0.03) 0%, transparent 60%);
+  pointer-events:none;
+}
+
+.board-v2-inner { max-width:1200px;margin:0 auto;position:relative;z-index:2; }
+
+/* Header */
+.board-v2-head {
+  display:flex;align-items:flex-end;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;margin-bottom:2rem;
+}
+.board-v2-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,7vw,6rem);
+  color:#fff;line-height:0.92;letter-spacing:0.02em;
+}
+.board-v2-title em { color:#F5C842;font-style:normal; }
+.board-v2-sub { font-size:0.85rem;color:#555;margin-top:0.6rem;max-width:340px;line-height:1.6; }
+
+/* Case file badge */
+.case-badge {
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:#F5C842;color:#111;
+  font-family:'Bebas Neue',sans-serif;font-size:0.88rem;letter-spacing:0.1em;
+  padding:0.45rem 1rem;border:2px solid #111;
+  box-shadow:4px 4px 0 rgba(0,0,0,0.5);border-radius:3px;
+  flex-shrink:0;align-self:flex-start;white-space:nowrap;
+}
+
+/* Tabs */
+.board-v2-tabs {
+  display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:2.5rem;
+  border-bottom:1.5px solid #1e1e1e;padding-bottom:1rem;
+}
+.bv2-tab {
+  padding:0.4rem 1.1rem;
+  font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.1em;
+  background:transparent;color:#444;border:1.5px solid #222;
+  border-radius:3px;cursor:pointer;transition:all 0.18s;
+}
+.bv2-tab:hover { color:#fff;border-color:#444; }
+.bv2-tab.active { background:#F5C842;color:#111;border-color:#F5C842;box-shadow:3px 3px 0 rgba(0,0,0,0.5); }
+
+/* ── CORK BOARD ── */
+.cork-board {
+  background: linear-gradient(145deg,#2a1f0e 0%,#1e1608 50%,#251c0a 100%);
+  border:3px solid #3a2a0a;
+  border-radius:12px;
+  padding:2.5rem;
+  position:relative;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.5), 0 8px 40px rgba(0,0,0,0.8);
+  min-height:440px;
+}
+/* Cork texture grain */
+.cork-board::before {
+  content:'';position:absolute;inset:0;border-radius:10px;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(245,200,66,0.015) 2px, rgba(245,200,66,0.015) 4px),
+                    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(245,200,66,0.01) 3px, rgba(245,200,66,0.01) 6px);
+  pointer-events:none;
+}
+
+/* SVG strings layer */
+.cork-strings { position:absolute;inset:0;pointer-events:none;z-index:1;overflow:visible;border-radius:10px; }
+
+/* Individual pinned items */
+.cork-item {
+  position:absolute;
+  cursor:pointer;
+  z-index:3;
+  transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1), z-index 0s;
+}
+.cork-item:hover { transform:rotate(0deg) scale(1.05) !important; z-index:20; }
+
+/* Push pin */
+.cpin {
+  width:16px;height:16px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%, #ffe870, #F5C842, #c89a00);
+  border:1.5px solid rgba(0,0,0,0.6);
+  box-shadow:1px 2px 6px rgba(0,0,0,0.7),inset 0 0 0 2px rgba(255,255,255,0.2);
+  position:absolute;top:-8px;left:50%;transform:translateX(-50%);z-index:5;
+}
+.cpin::after {
+  content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
+  width:2.5px;height:7px;background:linear-gradient(#aaa,#777);border-radius:0 0 2px 2px;
+}
+
+/* ── LP card: white polaroid ── */
+.cork-lp {
+  width:165px;
+  background:#fff;border-radius:3px;
+  padding:0.6rem 0.6rem 1rem;
+  box-shadow:3px 6px 20px rgba(0,0,0,0.7),1px 1px 0 rgba(255,255,255,0.1);
+}
+.cork-lp-img {
+  width:100%;height:95px;border-radius:2px;
+  background:linear-gradient(135deg,#111 0%,#1e1e1e 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;margin-bottom:0.45rem;position:relative;overflow:hidden;
+}
+.cork-lp-img::after {
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(245,200,66,0.12));
+}
+.cork-lp-name {
+  font-family:'Bebas Neue',sans-serif;font-size:0.82rem;letter-spacing:0.06em;
+  color:#111;text-align:center;
+}
+.cork-lp-meta { font-size:0.56rem;color:#999;text-align:center;margin-top:0.1rem; }
+.cork-lp:hover .cork-lp-img { background:linear-gradient(135deg,#111 0%,#2a1e00 100%); }
+
+/* ── Video card: yellow sticky ── */
+.cork-video {
+  width:155px;
+  background:#F5C842;border-radius:2px;
+  padding:0.6rem 0.7rem 0.7rem;
+  box-shadow:3px 6px 18px rgba(0,0,0,0.6),0 1px 0 rgba(255,255,255,0.15);
+  border-top:4px solid rgba(0,0,0,0.2);
+}
+.cork-video-play {
+  width:30px;height:30px;border-radius:50%;
+  background:#111;display:flex;align-items:center;justify-content:center;
+  margin-bottom:0.35rem;box-shadow:2px 2px 0 rgba(0,0,0,0.3);
+}
+.cork-video-play svg { margin-left:2px; }
+.cork-video-title {
+  font-family:'Bebas Neue',sans-serif;font-size:0.82rem;letter-spacing:0.04em;
+  color:#111;line-height:1.2;margin-bottom:0.2rem;
+}
+.cork-video-sub { font-size:0.6rem;color:rgba(0,0,0,0.55);line-height:1.35; }
+
+/* ── Doc card: parchment paper ── */
+.cork-doc {
+  width:185px;
+  background:linear-gradient(175deg,#f5e8c5 0%,#ead9a5 100%);
+  border-radius:2px;padding:0.75rem 0.8rem 0.9rem;
+  box-shadow:3px 6px 22px rgba(0,0,0,0.7);
+  position:relative;
+}
+.cork-doc::after {
+  content:'';position:absolute;top:0;left:0;right:0;height:2.5px;
+  background:repeating-linear-gradient(90deg,#c4a86a 0,#c4a86a 5px,transparent 5px,transparent 8px);
+}
+.cork-doc-badge {
+  font-size:0.56rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;
+  color:#8a6218;margin-bottom:0.3rem;
+}
+.cork-doc-title {
+  font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.04em;
+  color:#3a2000;line-height:1.2;margin-bottom:0.4rem;
+}
+.cork-doc-stats { display:flex;flex-direction:column;gap:0.12rem;margin-bottom:0.5rem; }
+.cork-doc-stat {
+  font-size:0.58rem;color:#5a3a00;
+  display:flex;align-items:center;gap:0.25rem;
+}
+.cork-doc-stat::before { content:'↗';color:#8a6218;font-size:0.58rem;font-weight:700; }
+.cork-doc-dl {
+  display:inline-flex;align-items:center;gap:0.3rem;
+  font-size:0.62rem;font-weight:700;color:#3a2000;
+  text-decoration:none;border-bottom:1px dashed #8a6218;
+  padding-bottom:1px;
+}
+.cork-doc-dl:hover { color:#000; }
+
+/* Annotation text */
+.cork-annot {
+  position:absolute;
+  font-family:'Caveat',cursive;
+  pointer-events:none;z-index:4;
+  white-space:nowrap;line-height:1.2;
+}
+
+/* Red string */
+.red-str { stroke:#c62a00;stroke-width:1.5;fill:none;opacity:0.65;stroke-linecap:round; }
+
+/* CTA bar */
+.board-v2-cta-bar {
+  margin-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+  padding:1.25rem 1.5rem;
+  background:#141414;border:1.5px solid #2a2a2a;border-radius:8px;
+}
+.board-v2-cta-text { font-size:0.85rem;color:#666; }
+.board-v2-cta-text strong { color:#fff;display:block;font-size:0.92rem;margin-bottom:0.15rem; }
+.board-v2-cta-btn {
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.6rem 1.3rem;
+  font-family:'Bebas Neue',sans-serif;font-size:0.92rem;letter-spacing:0.1em;
+  background:#F5C842;color:#111;border:2px solid #111;
+  box-shadow:4px 4px 0 #111;border-radius:3px;
+  text-decoration:none;transition:all 0.15s;white-space:nowrap;
+}
+.board-v2-cta-btn:hover { box-shadow:2px 2px 0 #111;transform:translate(2px,2px); }
+
+/* Mobile */
+@media(max-width:680px){
+  .cork-board { padding:1.5rem;min-height:auto; }
+  .cork-item { position:relative !important;top:auto !important;left:auto !important;
+    display:inline-block;margin:0.5rem;transform:none !important; }
+  .cork-board > .cork-item-wrap { display:flex;flex-wrap:wrap;justify-content:center; }
+  .cork-strings,.cork-annot { display:none; }
+  .cork-board { display:flex;flex-wrap:wrap;gap:0.6rem;align-items:flex-start; }
+}
+</style>
+
+  <div class="board-v2-inner">
+
+    <!-- Header -->
+    <div class="board-v2-head">
+      <div>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#F5C842;margin-bottom:0.4rem;">Evidence</div>
+        <h2 class="board-v2-title">The <em>Work</em></h2>
+        <p class="board-v2-sub">Real outputs — landing pages, product videos, and strategy documents. Click anything to open.</p>
+      </div>
+      <div class="case-badge">📁 Case File #001 — Suman Raj</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="board-v2-tabs">
+      <button class="bv2-tab active" onclick="switchBoard2('lp')" id="bv2-lp">📌 Landing Pages</button>
+      <button class="bv2-tab" onclick="switchBoard2('video')" id="bv2-video">▶ Product Videos</button>
+      <button class="bv2-tab" onclick="switchBoard2('docs')" id="bv2-docs">📄 Strategy Docs</button>
+    </div>
+
+    <!-- ══ LP BOARD ══ -->
+    <div id="bv2panel-lp" class="cork-board">
+      <svg class="cork-strings" viewBox="0 0 1100 420" preserveAspectRatio="none">
+        <!-- hub at center -->
+        <circle cx="550" cy="210" r="6" fill="#c62a00" opacity="0.8"/>
+        <path class="red-str" d="M550,210 Q380,160 185,150"/>
+        <path class="red-str" d="M550,210 Q420,120 390,70"/>
+        <path class="red-str" d="M550,210 Q650,120 730,65"/>
+        <path class="red-str" d="M550,210 Q760,160 930,155"/>
+        <path class="red-str" d="M550,210 Q420,290 200,335"/>
+        <path class="red-str" d="M550,210 Q700,310 910,340"/>
+        <circle cx="185" cy="150" r="4" fill="#F5C842" opacity="0.7"/>
+        <circle cx="390"  cy="70"  r="4" fill="#F5C842" opacity="0.7"/>
+        <circle cx="730"  cy="65"  r="4" fill="#F5C842" opacity="0.7"/>
+        <circle cx="930" cy="155" r="4" fill="#F5C842" opacity="0.7"/>
+        <circle cx="200" cy="335" r="4" fill="#F5C842" opacity="0.7"/>
+        <circle cx="910" cy="340" r="4" fill="#F5C842" opacity="0.7"/>
+      </svg>
+
+      <!-- annotation -->
+      <div class="cork-annot" style="left:48%;top:44%;font-size:1.2rem;color:#c62a00;">⊕</div>
+      <div class="cork-annot" style="left:44%;top:50%;font-size:0.78rem;color:#F5C842;opacity:0.8;">all connected</div>
+      <div class="cork-annot" style="left:62%;top:28%;font-size:0.8rem;color:#F5C842;transform:rotate(6deg);">← best CPL $15.09</div>
+      <div class="cork-annot" style="left:6%;top:55%;font-size:0.75rem;color:#cc9900;transform:rotate(-5deg);">6 pages built →</div>
+
+      <a href="https://swivl.tech/lp/max-ads" target="_blank" class="cork-item" style="left:3%;top:8%;transform:rotate(-4deg);">
+        <div class="cpin"></div><div class="cork-lp">
+          <div class="cork-lp-img">📢</div>
+          <div class="cork-lp-name">MAX Ads</div>
+          <div class="cork-lp-meta">Ad automation LP</div>
+        </div>
+      </a>
+      <a href="https://swivl.tech/lp/ai-estimator" target="_blank" class="cork-item" style="left:28%;top:3%;transform:rotate(5deg);">
+        <div class="cpin"></div><div class="cork-lp">
+          <div class="cork-lp-img">🧮</div>
+          <div class="cork-lp-name">AI Estimator</div>
+          <div class="cork-lp-meta">$23 CPL · Medium quality</div>
+        </div>
+      </a>
+      <a href="https://swivl.tech/lp/ai-website-builder" target="_blank" class="cork-item" style="left:56%;top:2%;transform:rotate(-6deg);">
+        <div class="cpin"></div><div class="cork-lp">
+          <div class="cork-lp-img">🌐</div>
+          <div class="cork-lp-name">AI Website Builder</div>
+          <div class="cork-lp-meta">$15.09 CPL · Best performer</div>
+        </div>
+      </a>
+      <a href="https://swivl.tech/lp/ai-receptionist" target="_blank" class="cork-item" style="right:2%;top:9%;transform:rotate(7deg);">
+        <div class="cpin"></div><div class="cork-lp">
+          <div class="cork-lp-img">📞</div>
+          <div class="cork-lp-name">AI Receptionist</div>
+          <div class="cork-lp-meta">Lead capture LP</div>
+        </div>
+      </a>
+      <a href="https://swivl.tech/lp/job-costing" target="_blank" class="cork-item" style="left:3%;bottom:6%;transform:rotate(-8deg);">
+        <div class="cpin"></div><div class="cork-lp">
+          <div class="cork-lp-img">💰</div>
+          <div class="cork-lp-name">Job Costing</div>
+          <div class="cork-lp-meta">Profitability vertical LP</div>
+        </div>
+      </a>
+      <a href="https://swivl.tech/lp/field-service" target="_blank" class="cork-item" style="right:3%;bottom:5%;transform:rotate(4deg);">
+        <div class="cpin"></div><div class="cork-lp">
+          <div class="cork-lp-img">🔧</div>
+          <div class="cork-lp-name">Field Service</div>
+          <div class="cork-lp-meta">$37 CPL · Best quality</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ══ VIDEO BOARD ══ -->
+    <div id="bv2panel-video" class="cork-board" style="display:none;">
+      <svg class="cork-strings" viewBox="0 0 1100 420" preserveAspectRatio="none">
+        <path class="red-str" d="M180,120 Q420,200 600,180"/>
+        <path class="red-str" d="M600,180 Q760,150 900,130"/>
+        <path class="red-str" d="M600,180 Q550,310 380,360"/>
+        <path class="red-str" d="M380,360 Q580,380 760,350"/>
+        <path class="red-str" d="M760,350 Q880,300 920,330"/>
+        <path class="red-str" d="M180,120 Q200,280 150,360"/>
+      </svg>
+      <div class="cork-annot" style="left:45%;top:38%;font-size:0.78rem;color:#F5C842;transform:rotate(-3deg);">9 videos produced</div>
+      <div class="cork-annot" style="left:10%;top:55%;font-size:0.75rem;color:#cc2200;transform:rotate(4deg);">98.1% retention ↑</div>
+
+      <a href="https://youtu.be/t_O9o2HKMZ0" target="_blank" class="cork-item" style="left:2%;top:6%;transform:rotate(-5deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">AI Website Builder Walkthrough</div>
+          <div class="cork-video-sub">98.1% still active after ad</div>
+        </div>
+      </a>
+      <a href="https://youtu.be/s4Oa0HUOjAg" target="_blank" class="cork-item" style="left:30%;top:3%;transform:rotate(4deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">AI Estimator Demo</div>
+          <div class="cork-video-sub">Estimate generation walkthrough</div>
+        </div>
+      </a>
+      <a href="https://youtu.be/SH0VTH6jCHE" target="_blank" class="cork-item" style="left:62%;top:2%;transform:rotate(-7deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">Product Overview</div>
+          <div class="cork-video-sub">Sales enablement walkthrough</div>
+        </div>
+      </a>
+      <a href="https://youtu.be/la2MzbK0HQE" target="_blank" class="cork-item" style="left:2%;bottom:8%;transform:rotate(6deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">AI Receptionist Demo</div>
+          <div class="cork-video-sub">Call answering + lead capture</div>
+        </div>
+      </a>
+      <a href="https://youtu.be/irlqtHarVLc" target="_blank" class="cork-item" style="left:30%;bottom:6%;transform:rotate(-4deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">Job Management</div>
+          <div class="cork-video-sub">Dispatch, track, invoice</div>
+        </div>
+      </a>
+      <a href="https://youtu.be/SI24ZFTjDqk" target="_blank" class="cork-item" style="left:60%;bottom:8%;transform:rotate(5deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">Invoicing & Payments</div>
+          <div class="cork-video-sub">Core activation feature</div>
+        </div>
+      </a>
+      <a href="https://youtu.be/3Jg_27_x360" target="_blank" class="cork-item" style="right:1%;bottom:10%;transform:rotate(-6deg);">
+        <div class="cpin"></div><div class="cork-video">
+          <div class="cork-video-play"><svg width="12" height="12" viewBox="0 0 12 12" fill="#F5C842"><polygon points="2,1 11,6 2,11"/></svg></div>
+          <div class="cork-video-title">Team & Scheduling</div>
+          <div class="cork-video-sub">Technician management</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ══ DOCS BOARD ══ -->
+    <div id="bv2panel-docs" class="cork-board" style="display:none;min-height:480px;">
+      <svg class="cork-strings" viewBox="0 0 1100 460" preserveAspectRatio="none">
+        <circle cx="550" cy="230" r="6" fill="#c62a00" opacity="0.7"/>
+        <path class="red-str" stroke-dasharray="6 4" d="M550,230 Q340,160 230,130"/>
+        <path class="red-str" stroke-dasharray="6 4" d="M550,230 Q750,160 880,130"/>
+        <path class="red-str" stroke-dasharray="6 4" d="M550,230 Q350,320 230,360"/>
+        <path class="red-str" stroke-dasharray="6 4" d="M550,230 Q740,320 880,360"/>
+      </svg>
+      <div class="cork-annot" style="left:46%;top:43%;font-size:0.9rem;color:#c62a00;">⊕</div>
+      <div class="cork-annot" style="left:40%;top:50%;font-size:0.75rem;color:#F5C842;opacity:0.7;">all yours to download</div>
+
+      <a href="Marketing_Wins_Q1_2026.pdf" download class="cork-item" style="left:4%;top:6%;transform:rotate(-5deg);">
+        <div class="cpin"></div><div class="cork-doc">
+          <div class="cork-doc-badge">Performance Report · Q1 2026</div>
+          <div class="cork-doc-title">Marketing Wins</div>
+          <div class="cork-doc-stats">
+            <div class="cork-doc-stat">23 campaigns tested</div>
+            <div class="cork-doc-stat">142 ad creatives</div>
+            <div class="cork-doc-stat">1,520 signups · $46K spend</div>
+            <div class="cork-doc-stat">3 winners found</div>
+          </div>
+          <a class="cork-doc-dl">⬇ Download PDF</a>
+        </div>
+      </a>
+      <a href="Signups_Breakdown_Analysis.pdf" download class="cork-item" style="right:4%;top:5%;transform:rotate(6deg);">
+        <div class="cpin"></div><div class="cork-doc">
+          <div class="cork-doc-badge">Analytics Report · Apr–Jul 2026</div>
+          <div class="cork-doc-title">Sign-ups Breakdown</div>
+          <div class="cork-doc-stats">
+            <div class="cork-doc-stat">918 → 1,361 → 1,701 signups</div>
+            <div class="cork-doc-stat">3.6% → 11% activation</div>
+            <div class="cork-doc-stat">PostHog quality matrix</div>
+            <div class="cork-doc-stat">4 monthly cohorts</div>
+          </div>
+          <a class="cork-doc-dl">⬇ Download PDF</a>
+        </div>
+      </a>
+      <a href="Content_Marketing_Strategy_Swivl.pdf" download class="cork-item" style="left:4%;bottom:4%;transform:rotate(4deg);">
+        <div class="cpin"></div><div class="cork-doc">
+          <div class="cork-doc-badge">Strategy Document</div>
+          <div class="cork-doc-title">Content Marketing Strategy</div>
+          <div class="cork-doc-stats">
+            <div class="cork-doc-stat">300 blog topics planned</div>
+            <div class="cork-doc-stat">7 content clusters</div>
+            <div class="cork-doc-stat">TOFU / MOFU / BOFU</div>
+            <div class="cork-doc-stat">Meta + LinkedIn + YouTube</div>
+          </div>
+          <a class="cork-doc-dl">⬇ Download PDF</a>
+        </div>
+      </a>
+      <a href="Ads_Optimizing_Strategy.pdf" download class="cork-item" style="right:4%;bottom:5%;transform:rotate(-5deg);">
+        <div class="cpin"></div><div class="cork-doc">
+          <div class="cork-doc-badge">Campaign Strategy</div>
+          <div class="cork-doc-title">Ads Optimising Strategy</div>
+          <div class="cork-doc-stats">
+            <div class="cork-doc-stat">Meta + Google architecture</div>
+            <div class="cork-doc-stat">Quality scoring framework</div>
+            <div class="cork-doc-stat">$15.09 best CPL achieved</div>
+            <div class="cork-doc-stat">Win rate 7.1% → target 15%</div>
+          </div>
+          <a class="cork-doc-dl">⬇ Download PDF</a>
+        </div>
+      </a>
+    </div>
+
+    <!-- CTA bar -->
+    <div class="board-v2-cta-bar">
+      <div class="board-v2-cta-text">
+        <strong>Want to see the full archive?</strong>
+        Landing pages, videos, content calendars, campaign briefs, and more — all in one place.
+      </div>
+      <a class="board-v2-cta-btn" href="https://my.superstuff.ai/suman-raj" target="_blank">
+        📂 View Full Portfolio ↗
+      </a>
+    </div>
+
+  </div><!-- end inner -->
+</section>
+
+<script>
+function switchBoard2(tab) {
+  ['lp','video','docs'].forEach(function(t){
+    var p=document.getElementById('bv2panel-'+t);
+    var b=document.getElementById('bv2-'+t);
+    if(p) p.style.display = t===tab ? 'block':'none';
+    if(b) b.classList.toggle('active', t===tab);
+  });
+}
+</script>
+
 
 <!-- CERTS & AWARDS -->
 <section style="background:#fafaf8;">
@@ -1324,7 +2209,7 @@
       <div class="award-icon">🏆</div>
       <div class="award-text">
         <div class="award-title">Marketing Excellence Award — Q3 2025</div>
-        <div class="award-sub">Swivl · Awarded for outstanding contribution to growth and campaign performance across paid acquisition, lifecycle email, and SEO systems.</div>
+        <div class="award-sub">Recognised for contributions across paid acquisition, lifecycle marketing, SEO, and growth initiatives.</div>
       </div>
     </div>
     <div class="certs-grid" style="margin-top:1.5rem;">
@@ -1337,22 +2222,23 @@
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="section-inner" style="text-align:center;">
-    <div class="section-label" style="text-align:center;">Let's connect</div>
-    <h2 class="section-title" style="text-align:center;">Open to opportunities</h2>
-    <p class="section-sub" style="margin:0.75rem auto 0;text-align:center;">Looking for product marketer or growth marketer roles at B2B SaaS companies. Happy to chat.</p>
+    <div class="section-label" style="text-align:center;">Let's Connect</div>
+    <h2 class="section-title" style="text-align:center;">What's Next?</h2>
+    <p class="section-sub" style="margin:0.75rem auto 0;text-align:center;">I've spent the last 3+ years moving from content → growth → product marketing. Now I'm looking for a B2B SaaS team where I can bring those pieces together — understanding the product, finding the right market, telling the right story, and helping turn that into growth.</p>
     <div class="contact-box">
       <div class="contact-name">Suman Raj</div>
-      <div class="contact-role">Product Marketer &amp; Growth Marketer · Bengaluru, India</div>
+      <div class="contact-role">Product Marketer · Growth Marketer · Bengaluru, India</div>
       <div class="contact-links">
         <a class="contact-link" href="mailto:sumanin031@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>sumanin031@gmail.com</a>
         <a class="contact-link" href="https://linkedin.com/in/suman-raj-" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/suman-raj-</a>
         <a class="contact-link" href="tel:+919842928362"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 98429 28362</a>
+        <a class="contact-link" href="https://my.superstuff.ai/suman-raj" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>View Portfolio</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer>Built with intention · Suman Raj · 2025</footer>
+<footer>Suman Raj · Product Marketer · Growth Marketer · Bengaluru, India · Let's talk about products, growth, GTM or the next interesting problem.</footer>
 
 <script>
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
@@ -1360,17 +2246,17 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 /* ─── JOURNEY DATA ───────────────────────────────────────────────── */
 var journeyData = [
   { company:'Fieldproxy (YC W22)', date:'Oct 2022 – Dec 2022', role:'Content Writer Intern',
-    desc:'Published 40+ pieces of content across SaaS and B2B topics. Wrote product documentation and optimised website copy for search. Conducted keyword research for Google Ads campaigns.',
-    pills:['Content Writing','Product Docs','Keyword Research','SEO'] },
+    desc:'My first step into B2B SaaS marketing. I wrote 40+ pieces across SaaS and B2B topics, worked on product documentation, optimised website content for search, and supported keyword research for Google Ads.',
+    pills:['Content Writing','Product Documentation','SEO','Keyword Research'] },
   { company:'Zuper', date:'Feb 2023 – Jun 2024', role:'Content Writer',
-    desc:'Positioned 12+ blogs in competitive SERPs, drove 10% organic traffic growth and 15% engagement lift. Authored high-converting landing pages and Google Ads copy for PPC campaigns.',
+    desc:'This is where I started thinking beyond writing good content. I worked on 12+ competitive SERP-focused blogs, helped drive 10% organic traffic growth, and created landing page and Google Ads copy designed to turn attention into action.',
     pills:['SEO Content','Landing Pages','Google Ads Copy','Keyword Strategy'] },
   { company:'Swivl', date:'Oct 2024 – Jun 2025', role:'Content Marketer',
-    desc:"Built Swivl's lifecycle email system in PostHog from scratch across 4 onboarding journeys. Drove organic growth: 151-topic SEO cluster, 132 blog rewrites, 190-post keyword audit.",
-    pills:['Lifecycle Email','PostHog','SEO Strategy','Social Media','Content Calendar'] },
+    desc:'This was where content started becoming a growth function. I built lifecycle email journeys, onboarding flows, SEO architecture, content operations, and social distribution — including a 151-topic SEO strategy across five trade industries.',
+    pills:['Lifecycle Marketing','PostHog','SEO Strategy','Content Operations','Social Media'] },
   { company:'Swivl', date:'Jul 2025 – Present', role:'Product Marketer',
-    desc:'Owned end-to-end GTM strategy across 5 trade verticals. Built ICP frameworks from PostHog cohorts, sales pitch assets, competitive battle cards. Managed $800/day paid media across Meta and Google.',
-    pills:['GTM Strategy','Sales Enablement','Competitive Intel','Meta + Google Ads','ICP Development'] }
+    desc:'This is where content, growth, and product finally came together. I own GTM strategy across multiple trade verticals — translating product capabilities into positioning, messaging, campaigns, sales enablement, and launch plans.',
+    pills:['Product Marketing','GTM Strategy','Positioning','Feature Launches','Competitive Intelligence','Sales Enablement'] }
 ];
 
 /* ─── JOURNEY SECTION ────────────────────────────────────────────── */
@@ -1469,9 +2355,9 @@ window.addEventListener('load', function () {
         card.style.left = (cx + gap) + 'px';
         card.style.top  = Math.max(8, cy - cardH - gap) + 'px';
       } else if (i === 3) {
-        /* Swivl PM: stop ~right — card BOTTOM-RIGHT (fully visible) */
+        /* Swivl PM: stop ~right — card TOP-RIGHT, shifted up so it's fully visible */
         card.style.left = (cx + gap) + 'px';
-        card.style.top  = (cy + gap) + 'px';
+        card.style.top  = Math.max(8, cy - cardH - gap * 3) + 'px';
       }
 
     });
@@ -1593,9 +2479,11 @@ window.addEventListener('load', function () {
     var seg  = Math.min(progress * 6, 5.999);
     var lo   = Math.floor(seg);
     var t    = seg - lo;
+    /* ease-in-out sine for smooth inter-rung motion */
+    var tEased = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
     var y0   = rungSvgY[lo];
     var y1   = rungSvgY[lo + 1];
-    var svgY = y0 + (y1 - y0) * t;
+    var svgY = y0 + (y1 - y0) * tEased;
 
     var pxY = rungToPixel(svgY) - 40;
     figure.style.top = Math.max(0, pxY) + 'px';
@@ -1637,7 +2525,7 @@ window.addEventListener('load', function () {
       pinSpacing: true,
       start     : 'top top',
       end       : '+=500%',
-      scrub     : 1.8,
+      scrub     : 2.5,
       onUpdate  : function (self) {
         var p = self.progress;
         setFigure(p);
@@ -1654,6 +2542,88 @@ window.addEventListener('load', function () {
   /* Init positions */
   setFigure(0);
 });
+
+
+/* ─── CASE STUDY MODAL ───────────────────────────────────────────── */
+function openCaseStudy(id) {
+  var data = document.getElementById(id);
+  if (!data) return;
+
+  var num       = data.getAttribute('data-num');
+  var title     = data.getAttribute('data-title');
+  var challenge = data.getAttribute('data-challenge');
+  var approach  = data.getAttribute('data-approach');
+  var action    = data.getAttribute('data-action');
+  var results   = data.getAttribute('data-results');
+  var metrics   = data.getAttribute('data-metrics');
+  var tools     = data.getAttribute('data-tools');
+
+  document.getElementById('cs-modal-label').textContent = num + '  /  Case Study';
+  document.getElementById('cs-modal-title').textContent = title;
+
+  document.getElementById('cs-modal-body').innerHTML =
+    '<div class="cs-section">' +
+      '<div class="cs-section-head"><div class="cs-section-icon">⚡</div><div class="cs-section-title">The Challenge</div></div>' +
+      '<p class="cs-section-text">' + challenge + '</p>' +
+    '</div>' +
+    '<hr class="cs-divider">' +
+    '<div class="cs-section">' +
+      '<div class="cs-section-head"><div class="cs-section-icon">🧠</div><div class="cs-section-title">The Approach</div></div>' +
+      '<p class="cs-section-text">' + approach + '</p>' +
+    '</div>' +
+    '<hr class="cs-divider">' +
+    '<div class="cs-section">' +
+      '<div class="cs-section-head"><div class="cs-section-icon">🔧</div><div class="cs-section-title">What I Did</div></div>' +
+      '<p class="cs-section-text">' + action + '</p>' +
+    '</div>' +
+    '<hr class="cs-divider">' +
+    '<div class="cs-section">' +
+      '<div class="cs-section-head"><div class="cs-section-icon">📊</div><div class="cs-section-title">Impact Metrics</div></div>' +
+      '<div class="cs-metrics">' + metrics + '</div>' +
+    '</div>' +
+    '<hr class="cs-divider">' +
+    '<div class="cs-section">' +
+      '<div class="cs-section-head"><div class="cs-section-icon">✅</div><div class="cs-section-title">Results</div></div>' +
+      '<p class="cs-section-text">' + results + '</p>' +
+    '</div>' +
+    '<hr class="cs-divider">' +
+    '<div class="cs-section">' +
+      '<div class="cs-section-head"><div class="cs-section-icon">🛠️</div><div class="cs-section-title">Tools Used</div></div>' +
+      '<div class="cs-tools">' + tools + '</div>' +
+    '</div>';
+
+  var overlay = document.getElementById('cs-overlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  /* Reset scroll */
+  document.getElementById('cs-modal').scrollTop = 0;
+}
+
+function closeCaseStudy() {
+  document.getElementById('cs-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Close on overlay click */
+document.getElementById('cs-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeCaseStudy();
+});
+
+/* Close on Escape key */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeCaseStudy();
+});
+
+
+/* ─── MY WORK TABS ───────────────────────────────────────────────── */
+function switchTab(tab) {
+  ['lp','video','docs'].forEach(function(t) {
+    document.getElementById('panel-' + t).style.display = t === tab ? 'block' : 'none';
+    var btn = document.getElementById('tab-' + t);
+    if (btn) { btn.classList.toggle('active', t === tab); }
+  });
+}
 
 /* ─── SMOOTH NAV ─────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
@@ -1684,5 +2654,94 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
+<!-- ════════════════════════════════════════
+     CASE STUDY MODAL
+════════════════════════════════════════ -->
+<div id="cs-overlay" role="dialog" aria-modal="true" aria-labelledby="cs-modal-title">
+  <div id="cs-modal">
+    <div id="cs-modal-header">
+      <div id="cs-modal-title-wrap">
+        <div id="cs-modal-label">Case Study</div>
+        <div id="cs-modal-title">—</div>
+      </div>
+      <button id="cs-close" onclick="closeCaseStudy()" aria-label="Close">✕</button>
+    </div>
+    <div id="cs-modal-body">
+      <!-- filled dynamically by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- Hidden case study data stores -->
+
+    <!-- CASE STUDY: Product Marketing and GTM -->
+    <div class="cs-data" id="cs-0" style="display:none;"
+      data-num="01"
+      data-title="Product Marketing and GTM"
+      data-challenge="Swivl had AI-native features — AI Estimator, AI Receptionist, AI Website Builder — but no structured GTM process. Launches shipped without coordinated messaging, landing pages, or sales alignment. No ICP clarity, no battle cards, and no campaign-to-product connection."
+      data-approach="Built the GTM motion from scratch. Created feature-specific landing pages for every AI product, developed competitive positioning against Jobber and ServiceTitan, and coordinated all launches across paid, social, email, and sales in one unified motion."
+      data-action="Wrote and briefed 6 landing pages (AI Estimator, AI Receptionist, AI Website Builder, Job Costing, MAX Ads, Field Service). Launched Swivl vs ServiceTitan competitive campaign which became a Best-rated campaign. Ran 23 Meta campaigns and 142 creatives to test positioning angles. Built ICP profiles from PostHog cohorts and created pitch frameworks for the sales team."
+      data-results="Monthly signups grew from 918 (April) to 1,701 (June) — an 85% increase in 3 months. Swivl vs ServiceTitan became the best-quality campaign at $38 CPL. 9 product walkthrough videos produced to support sales and onboarding. All major AI features had coordinated GTM cycles."
+      data-metrics='<div class="cs-metric-box"><div class="cs-metric-num">+85%</div><div class="cs-metric-label">Signup growth in 3 months</div></div><div class="cs-metric-box"><div class="cs-metric-num">1,701</div><div class="cs-metric-label">Monthly signups peak (June)</div></div><div class="cs-metric-box"><div class="cs-metric-num">6</div><div class="cs-metric-label">Landing pages built</div></div><div class="cs-metric-box"><div class="cs-metric-num">9</div><div class="cs-metric-label">Product videos produced</div></div>'
+      data-tools='<span class="cs-tool-tag">PostHog</span><span class="cs-tool-tag">Figma</span><span class="cs-tool-tag">Linear</span><span class="cs-tool-tag">Meta Ads</span><span class="cs-tool-tag">Google Ads</span><span class="cs-tool-tag">Claude</span><span class="cs-tool-tag">Notion</span>'
+    ></div>
+    <!-- CASE STUDY: Paid Acquisition -->
+    <div class="cs-data" id="cs-1" style="display:none;"
+      data-num="02"
+      data-title="Paid Acquisition"
+      data-challenge="$46K spent in Phase 1 with no purchase pixel configured, 99.6% of signups missing UTM attribution, and 100% of ad sets stuck in Meta's learning phase due to a broken CBO structure funnelling budget into zero-event ad sets."
+      data-approach="Treated paid media as broken infrastructure, not a budget problem. Audited 8 months of spend data cross-referenced with PostHog behavioral quality scores, and rebuilt everything from attribution architecture outward."
+      data-action="Fixed the server-side UTM bug at auth:user_created. Configured purchase pixel events. Restructured CBO campaigns. Consolidated 8 overlapping MAX Ads variants. Shifted budget from Meta-heavy to balanced Meta + Google after Google proved 20% cheaper CPL with 3× higher engagement. Built quality-score dashboards linking spend to PostHog activation data."
+      data-results="1,520 ad-sourced signups in 3 months (Meta: 1,071, Google: 449). 491 users still active — 32% retention from ad signups. Best CPL achieved: AI Website Builder on Google at $15.09. Video Ad 1 achieved 98.1% still-active rate — highest retention of any creative. Win rate: 7.1% (3 of 142 creatives passed cost + quality filter). Phase 2 target: >15% win rate."
+      data-metrics='<div class="cs-metric-box"><div class="cs-metric-num">1,520</div><div class="cs-metric-label">Ad-sourced signups (Q1)</div></div><div class="cs-metric-box"><div class="cs-metric-num">$15.09</div><div class="cs-metric-label">Lowest CPL achieved</div></div><div class="cs-metric-box"><div class="cs-metric-num">98.1%</div><div class="cs-metric-label">Top creative retention rate</div></div><div class="cs-metric-box"><div class="cs-metric-num">491</div><div class="cs-metric-label">Active users retained</div></div>'
+      data-tools='<span class="cs-tool-tag">Meta Ads Manager</span><span class="cs-tool-tag">Google Ads</span><span class="cs-tool-tag">PostHog</span><span class="cs-tool-tag">GA4</span><span class="cs-tool-tag">GSC</span>'
+    ></div>
+    <!-- CASE STUDY: Lifecycle and Automation -->
+    <div class="cs-data" id="cs-2" style="display:none;"
+      data-num="03"
+      data-title="Lifecycle and Automation"
+      data-challenge="Signup-to-activation was critically low. April 2026 cohort: 918 signups, only 33 active (3.6%), 10 revenue active (1.1%). Users were signing up from ads and immediately dropping off with zero onboarding system in place."
+      data-approach="Built Swivl's complete lifecycle email infrastructure from zero in PostHog — designing goal-specific journeys around the highest-value activation paths, weighted by business impact. Target: 60 activations/day, 420/week."
+      data-action="Architected 4 onboarding journeys: Send Estimates & Invoices (50% weight), Manage Jobs & Teams (25%), Switch From Another Tool (15%), AI Receptionist (10%). Built SMS + email framework across 8 behavior patterns including ghost user reactivation, dormant recovery, and feature-adoption nudges. Diagnosed and fixed broken workflow architecture — incorrect lifecycle_stage assignments, wrong node types, trigger guard gaps. Backfilled 247 users into broken orchestrators."
+      data-results="Active users grew: April 33 (3.6%) → May 67 (4.9%) → July 162 (11%) — the biggest activation jump after full workflow launch. Semi-active users consistently 25–35% of all signups across cohorts. 247 at-risk users recovered via backfill fix."
+      data-metrics='<div class="cs-metric-box"><div class="cs-metric-num">162</div><div class="cs-metric-label">Active users (July peak, 11%)</div></div><div class="cs-metric-box"><div class="cs-metric-num">247</div><div class="cs-metric-label">Users recovered</div></div><div class="cs-metric-box"><div class="cs-metric-num">3.6%→11%</div><div class="cs-metric-label">Activation rate improvement</div></div><div class="cs-metric-box"><div class="cs-metric-num">4</div><div class="cs-metric-label">Onboarding journeys built</div></div>'
+      data-tools='<span class="cs-tool-tag">PostHog</span><span class="cs-tool-tag">Swivl Notifications</span><span class="cs-tool-tag">Linear</span><span class="cs-tool-tag">Claude</span>'
+    ></div>
+    <!-- CASE STUDY: SEO and Organic Growth -->
+    <div class="cs-data" id="cs-3" style="display:none;"
+      data-num="04"
+      data-title="SEO and Organic Growth"
+      data-challenge="190 published posts with poor SERP coverage, FSM jargon throughout, no trade-vertical targeting, redirect loops, and a legacy WordPress subdomain splitting domain authority. Organic was producing signups but had no systematic foundation."
+      data-approach="Treated SEO as infrastructure, not a content calendar. Rebuilt the entire architecture: topic cluster strategy, keyword hierarchy, PSEO pages, technical fixes, and a systematic backlink program — all running in parallel."
+      data-action="Architected a 7-cluster content strategy across Business Growth, Operations, Profitability, AI, Systemization, and Software (TOFU/MOFU/BOFU). Planned 300 blog topics (6 categories × 5 clusters × 10 blogs each). Built programmatic cost guide pages across 33 US states. Rewrote 132 blog posts via CMS automation with trade-vertical targeting. Audited 190 posts via GSC for CTR and index coverage gaps. Fixed redirect loops, JS rendering failures, duplicate meta titles, and domain authority split from WordPress subdomain. Built 711-record backlink directory using DataForSEO across 17 industries."
+      data-results="Organic/direct signups grew from 211 (April) to 538 (June) — a 155% increase. Organic became the 2nd largest signup source after paid. 300 blog topics systematically planned and in production. 33 PSEO pages live capturing geo-specific buying intent."
+      data-metrics='<div class="cs-metric-box"><div class="cs-metric-num">538</div><div class="cs-metric-label">Organic signups (June)</div></div><div class="cs-metric-box"><div class="cs-metric-num">+155%</div><div class="cs-metric-label">Organic growth (Apr→Jun)</div></div><div class="cs-metric-box"><div class="cs-metric-num">300</div><div class="cs-metric-label">Blog topics planned</div></div><div class="cs-metric-box"><div class="cs-metric-num">33</div><div class="cs-metric-label">PSEO state pages live</div></div>'
+      data-tools='<span class="cs-tool-tag">GSC</span><span class="cs-tool-tag">Ahrefs</span><span class="cs-tool-tag">Screaming Frog</span><span class="cs-tool-tag">Swivl CMS</span><span class="cs-tool-tag">DataForSEO</span><span class="cs-tool-tag">Claude</span>'
+    ></div>
+    <!-- CASE STUDY: Social and Content Ops -->
+    <div class="cs-data" id="cs-4" style="display:none;"
+      data-num="05"
+      data-title="Social and Content Ops"
+      data-challenge="No content calendar, inconsistent social posting, no creative briefs for designers, and no system connecting content output to campaign launches or product releases."
+      data-approach="Built the full content operations system — calendar, briefing process, social scheduling, and a coordination layer between content, design, and product launches."
+      data-action="Created and owned the content calendar aligning blog, social, email, and feature launches into one plan. Managed organic social across Meta (Instagram, Facebook) and LinkedIn. Wrote platform-specific copy for each channel. Briefed designers with detailed asset specs (messaging angle, visual hierarchy, trade-vertical context, CTA). Coordinated weekly output across the 5-person team."
+      data-results="Consistent publishing cadence established across all channels. Creative brief process adopted by design team. Social content aligned to campaign and launch calendar. Monthly content themes planned and executed."
+      data-metrics='<div class="cs-metric-box"><div class="cs-metric-num">3</div><div class="cs-metric-label">Platforms managed</div></div><div class="cs-metric-box"><div class="cs-metric-num">5</div><div class="cs-metric-label">Team members coordinated</div></div><div class="cs-metric-box"><div class="cs-metric-num">Weekly</div><div class="cs-metric-label">Publishing cadence</div></div><div class="cs-metric-box"><div class="cs-metric-num">Monthly</div><div class="cs-metric-label">Themes planned</div></div>'
+      data-tools='<span class="cs-tool-tag">Canva</span><span class="cs-tool-tag">Figma</span><span class="cs-tool-tag">Linear</span><span class="cs-tool-tag">Notion</span><span class="cs-tool-tag">Meta</span><span class="cs-tool-tag">LinkedIn</span>'
+    ></div>
+    <!-- CASE STUDY: Team and Project Leadership -->
+    <div class="cs-data" id="cs-5" style="display:none;"
+      data-num="06"
+      data-title="Team and Project Leadership"
+      data-challenge="Marketing team had no sprint system, no briefing standards, and no workflow connecting individual output — design, dev, video, copy — to campaign timelines. Product launches were not coordinated with marketing."
+      data-approach="Built the team operating system from scratch: Linear sprint structure, creative briefing standards, weekly delivery rhythms, and a direct coordination loop with the sales team to roll out product enablement content."
+      data-action="Led a cross-functional team of 5 (PPC specialist, web developer, SEO specialist, 2 designers). Set weekly sprint priorities in Linear, assigned issues, tracked milestones, removed blockers. Coordinated delivery of 6 AI product landing pages, 9 product walkthrough videos, 142 ad creatives, and weekly social output simultaneously. Worked directly with sales team to roll out product videos and briefs that helped customers understand product features and reduced support overhead."
+      data-results="23 campaigns executed across Meta and Google. 142 ad creatives produced and tested in Q1 2026 alone. 6 landing pages shipped. 9 product videos delivered. Sprint system and brief process adopted across all functions. Q3 2025 Marketing Excellence Award for outstanding cross-functional contribution."
+      data-metrics='<div class="cs-metric-box"><div class="cs-metric-num">5</div><div class="cs-metric-label">Team members led</div></div><div class="cs-metric-box"><div class="cs-metric-num">142</div><div class="cs-metric-label">Ad creatives produced</div></div><div class="cs-metric-box"><div class="cs-metric-num">23</div><div class="cs-metric-label">Campaigns executed</div></div><div class="cs-metric-box"><div class="cs-metric-num">🏆</div><div class="cs-metric-label">Marketing Excellence Award Q3 2025</div></div>'
+      data-tools='<span class="cs-tool-tag">Linear</span><span class="cs-tool-tag">Notion</span><span class="cs-tool-tag">Figma</span><span class="cs-tool-tag">Canva</span><span class="cs-tool-tag">Slack</span>'
+    ></div>
+<!-- end case study data -->
+
 </body>
 </html>
